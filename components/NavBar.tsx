@@ -21,11 +21,11 @@ export default function Navbar() {
   return (
     <nav className="bg-red-50 border-b border-gray-200 px-6 py-4 ">
       <div className=" flex flex-row ">
-        <div className="w-1/3">
+        <div className="w-1/2">
             <Link key='/' href='/' className="text-4xl font-bold text-green-900 text-start">BestiaryU</Link>
         
         </div>
-        <div className=" w-1/3 flex flex-row justify-center pt-3 gap-5">
+        <div className=" w-1/2 flex flex-row justify-end pt-3 gap-5 mr-10">
         {
             navLinks.map((link)=>{
                 const isActive = pathname ===link.href
