@@ -1,6 +1,17 @@
+import HomeAnimalCard from "@/components/HomeAnimalCard";
 import Image from "next/image";
+import { animals } from "../lib/data";
+
+//function that creates a copy of animal array in random order so random animals can be generated for feature profile
+function getFeaturedAnimals(arr: typeof animals, count: number) {
+  return [...arr]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, count);
+}
 
 export default function Home() {
+  //takes the animals data array and 3 to generate 3 animals to be the page's featured animals
+  const featuredAnimals = getFeaturedAnimals(animals,3)
   return (
     <><div className="relative text-center">
  <Image
@@ -30,6 +41,19 @@ export default function Home() {
         </button>
         </div>
       </div>
-    </div></>
+    </div>
+    <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-around mx-10">
+    {featuredAnimals.slice(0, 3).map((animal) => (
+  <HomeAnimalCard
+    key={animal.id}
+    imageUri={animal.imageUri}
+    species={animal.species}
+    habitat={animal.habitat}
+    blurb={animal.blurb}
+  />
+  
+))}
+</div>
+    </>
   );
 }
