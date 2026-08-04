@@ -17,10 +17,10 @@ const ViewAnimalCard = ({
   species,
   blurb,
   conservationStatus,
-  class,
+  animalClass,
 }: ViewAnimalCardProps) => {
   return (
-    <div className="bg-white  h-120 max-w-full w-[90%] ml-4 lg:w-70 rounded-2xl mt-10 flex flex-col lg:my-10">
+    <div className="bg-white  h-135 max-w-full w-[90%] ml-4 lg:w-70 rounded-2xl mt-10 flex flex-col lg:my-10">
         <div className="w-full p-4 h-80">
             
           <Image
@@ -31,15 +31,20 @@ const ViewAnimalCard = ({
             sizes="(max-width: 768px) 100vw, 33vw"
             className="w-full h-full object-cover"
           />
-          <div className="flex flex-col">
-            <h2 className="text-orange-500 mt-7 text-sm font-semibold">{habitat.toUpperCase()}</h2>
-            <h1 className="text-green-900 font-bold text-2xl">{species}</h1>
-            <div className="h-10">
-              <p className="text-green-800 text-xs">{blurb}</p>
-            </div>
-            <div >
+          <div className="flex flex-col mt-10">
+            <div className="justify-between flex flex-row mb-3">
               <ConservationStatusCard conservationStatus={conservationStatus} />
+              <h3 className="text-xs text-gray-400">{animalClass.toUpperCase()}</h3>
             </div>
+
+            <h1 className="text-green-900 font-bold text-2xl mb-1">{species}</h1>
+            <div className="h-10">
+              <p className="text-stone-400 text-xs italic">{blurb}</p>
+            </div>
+            <div className="w-full border-b border-b-green-950 mt-6 pt-4 text-center">
+              <h2 className="text-md font-semibold text-green-950 font-serif">EXPLORE HABITAT</h2>
+            </div>
+            
           </div>
         </div>
     </div>

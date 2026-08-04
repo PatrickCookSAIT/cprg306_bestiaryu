@@ -27,9 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      animalClassName={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body animalClassName="min-h-full flex flex-col"><NavBar/>{children}<Footer/></body>
+      <body className="min-h-full flex flex-col"><NavBar/>{children}<Footer/></body>
     </html>
   );
 }
