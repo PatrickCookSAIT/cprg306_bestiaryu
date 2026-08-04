@@ -55,7 +55,7 @@ export const animals: Animal[] = [
   },
   {
         id: "3", species:"Red Panda", class:"mammal", binomialName: "Ailurus fulgens", conservationStatus: "endangered", habitat: "The Lost Peaks", 
-        blurb: "Red Pandas are the house cats of the himalayans. Many attempts have been made to domesticate them, but so far all have failed. Its said if you carry one to the summit Annapurna it will grant you two wishes, one of which is head scritches",
+        blurb: "Red Pandas are the house cats of the himalayans. It's said if you carry one to the summit Annapurna it will grant you two wishes, one of which is head scritches",
         socialStructure: "solitary", diet:"herbivore", lifespan:"14 years", imageUri: "https://images.pexels.com/photos/7633795/pexels-photo-7633795.jpeg"
     
   },
@@ -658,7 +658,7 @@ export const animals: Animal[] = [
     imageUri: "https://images.pexels.com/photos/33485065/pexels-photo-33485065.jpeg",
   },
   {id: "69", species: "Big Foot", class:"mammal", binomialName: "Biggus Footus", conservationStatus: "extinct in the wild", habitat: "The Lost Peaks",
-        blurb: "Bigfoot roams the wilds of the Pacific Northwest, hitting trees and scaring off unwashed hunters from its habitat. A live bigfoot has never been captured on film as they are known to use monkey suits as camouflage to elude predators",
+        blurb: "A live bigfoot has never been captured on film as they are known to use monkey suits as camouflage to elude predators",
         socialStructure: "family unit", diet:"omnivore", lifespan: "unknown", imageUri: "https://images.pexels.com/photos/36554178/pexels-photo-36554178.jpeg"
      }
 ];
