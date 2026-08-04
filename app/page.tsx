@@ -53,6 +53,7 @@ export default function Home() {
     species={animal.species}
     habitat={animal.habitat}
     blurb={animal.blurb}
+    conservationStatus={animal.conservationStatus}
   />
   
 ))}
