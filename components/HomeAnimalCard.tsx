@@ -15,7 +15,7 @@ const HomeAnimalCard = ({
   blurb,
 }: HomeAnimalCardProps) => {
   return (
-    <div className="bg-white  h-150 w-120 rounded-2xl mt-10 flex flex-col my-10">
+    <div className="bg-white  h-150 max-w-full w-full lg:w-120 rounded-2xl mt-10 flex flex-col lg:my-10">
         <div className="w-full p-4 h-120">
             
 <Image

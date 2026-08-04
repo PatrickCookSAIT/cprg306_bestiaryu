@@ -3,6 +3,7 @@ import HomeAnimalCard from "@/components/HomeAnimalCard";
 import Image from "next/image";
 import { animals } from "../lib/data";
 
+//server won't cache the random animal choices so it with allow for new animals each reload
 export const dynamic = "force-dynamic";
 //function that creates a copy of animal array in random order so random animals can be generated for feature profile
 function getFeaturedAnimals(arr: typeof animals, count: number) {
@@ -15,7 +16,8 @@ export default function Home() {
   //takes the animals data array and 3 to generate 3 animals to be the page's featured animals
   const featuredAnimals = getFeaturedAnimals(animals,3)
   return (
-    <><div className="relative text-center">
+    <>
+    <div className="relative text-center max-w-full">
  <Image
   src="https://images.pexels.com/photos/34296800/pexels-photo-34296800.jpeg"
   alt="Red panda"
@@ -44,7 +46,7 @@ export default function Home() {
         </div>
       </div>
     </div>
-    <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-around mx-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 lg:justify-around lg:mx-10 max-w-full">
     {featuredAnimals.slice(0, 3).map((animal) => (
   <HomeAnimalCard
     key={animal.id}
