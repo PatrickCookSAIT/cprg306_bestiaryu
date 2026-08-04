@@ -2,6 +2,7 @@
 import HomeAnimalCard from "@/components/HomeAnimalCard";
 import Image from "next/image";
 import { animals } from "../lib/data";
+import Link from "next/link";
 
 //server won't cache the random animal choices so it with allow for new animals each reload
 export const dynamic = "force-dynamic";
@@ -49,7 +50,7 @@ export default function Home() {
       <h1 className="text-2xl text-green-900 font-bold font-serif">Featured Species</h1>
       <div className="flex flex-row mt-2 justify-between">
         <h2 className="text-green-900 text-sm">Meet our majestic ambassadors hailing from the animal kingdom</h2>
-        <button className="text-green-900 text-sm font-semibold hidden lg:block">View All Animals &#x2197;</button>
+        <Link key='/animals' href='/animals' className="text-green-900 text-sm font-semibold hidden lg:block hover:text-green-500">View All Animals &#x2197;</Link>
       </div>
     </div>
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 lg:justify-around lg:mx-10 max-w-full">
