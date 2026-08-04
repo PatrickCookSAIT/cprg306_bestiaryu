@@ -32,7 +32,7 @@ const page = () => {
     habitat={animal.habitat}
     blurb={animal.blurb}
     conservationStatus={animal.conservationStatus}
-    class={animal.class}
+    animalClass={animal.animalClass}
   />
   
 ))}

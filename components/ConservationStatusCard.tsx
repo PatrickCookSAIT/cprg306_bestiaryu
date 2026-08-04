@@ -39,8 +39,8 @@ const ConservationStatusCard = ({conservationStatus}: ConservationStatusCardProp
         textColor = "text-white";
     }
   return (
-    <div className={`flex w-40 h-5 rounded-2xl  align-center justify-center items-center ${bgColor}`}>
-      <p className={`text-xs font-bold ${textColor}`}>{conservationStatus}</p>
+    <div animalClassName={`flex w-40 h-5 rounded-2xl  align-center justify-center items-center ${bgColor}`}>
+      <p animalClassName={`text-xs font-bold ${textColor}`}>{conservationStatus}</p>
     </div>
   )
 }

@@ -18,42 +18,42 @@ export default function Home() {
   const featuredAnimals = getFeaturedAnimals(animals,3)
   return (
     <>
-    <div className="relative text-center max-w-full">
+    <div animalClassName="relative text-center max-w-full">
  <Image
   src="https://images.pexels.com/photos/34296800/pexels-photo-34296800.jpeg"
   alt="Red panda"
   width={1200}
   height={800}
-  className="w-full h-[80vh] object-cover"
+  animalClassName="w-full h-[80vh] object-cover"
 />
-      <div className="w-full absolute top-0 left-0  mt-50 pl-10 flex flex-col items-start">
-        <h2 className="text-4xl lg:text-6xl font-bold text-white ">
+      <div animalClassName="w-full absolute top-0 left-0  mt-50 pl-10 flex flex-col items-start">
+        <h2 animalClassName="text-4xl lg:text-6xl font-bold text-white ">
           Explore Our
         </h2>
-        <h2 className="text-4xl lg:text-6xl font-bold font-serif text-green-200 ">
+        <h2 animalClassName="text-4xl lg:text-6xl font-bold font-serif text-green-200 ">
           Wild World
         </h2>
-        <div className=" w-80 ">
-        <h3 className="text-white text-start ">Experience the delicate balance of nature in our ethically-led habitats. From the canopy to the forest floor, discover the stories of the creatures we share our planet with.</h3>
+        <div animalClassName=" w-80 ">
+        <h3 animalClassName="text-white text-start ">Experience the delicate balance of nature in our ethically-led habitats. From the canopy to the forest floor, discover the stories of the creatures we share our planet with.</h3>
         </div>
-        <div className="flex flex-row max-w-full">
-        <button className="mt-10 bg-green-900 hover:bg-green-500 text-white font-bold py-2 px-4 rounded mr-8">
+        <div animalClassName="flex flex-row max-w-full">
+        <button animalClassName="mt-10 bg-green-900 hover:bg-green-500 text-white font-bold py-2 px-4 rounded mr-8">
           Plan your trip →
         </button>
-        <button className="mt-10  bg-gray-500/25 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded">
+        <button animalClassName="mt-10  bg-gray-500/25 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded">
           View our animals
         </button>
         </div>
       </div>
     </div>
-    <div className="flex flex-col mx-10 mt-10">
-      <h1 className="text-2xl text-green-900 font-bold font-serif">Featured Species</h1>
-      <div className="flex flex-row mt-2 justify-between">
-        <h2 className="text-green-900 text-sm">Meet our majestic ambassadors hailing from the animal kingdom</h2>
-        <Link key='/animals' href='/animals' className="text-green-900 text-sm font-semibold hidden lg:block hover:text-green-500">View All Animals &#x2197;</Link>
+    <div animalClassName="flex flex-col mx-10 mt-10">
+      <h1 animalClassName="text-2xl text-green-900 font-bold font-serif">Featured Species</h1>
+      <div animalClassName="flex flex-row mt-2 justify-between">
+        <h2 animalClassName="text-green-900 text-sm">Meet our majestic ambassadors hailing from the animal kingdom</h2>
+        <Link key='/animals' href='/animals' animalClassName="text-green-900 text-sm font-semibold hidden lg:block hover:text-green-500">View All Animals &#x2197;</Link>
       </div>
     </div>
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 lg:justify-around lg:mx-10 max-w-full">
+    <div animalClassName="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 lg:justify-around lg:mx-10 max-w-full">
     {featuredAnimals.slice(0, 3).map((animal) => (
   <HomeAnimalCard
     key={animal.id}

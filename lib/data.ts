@@ -1,7 +1,7 @@
 export type Animal = {
     id: string,
     species: string,
-    class:string,
+    animalClass:string,
     binomialName: string,
     conservationStatus: string,
     habitat: string,
@@ -30,7 +30,7 @@ export const animals: Animal[] = [
   {
     id: "1",
     species: "African Lion",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Panthera leo",
     conservationStatus: "vulnerable",
     habitat: "The Sunsoaked Savanna",
@@ -43,7 +43,7 @@ export const animals: Animal[] = [
   {
     id: "2",
     species: "Bengal Tiger",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Panthera tigris tigris",
     conservationStatus: "endangered",
     habitat: "The Great Rainforest",
@@ -54,7 +54,7 @@ export const animals: Animal[] = [
     imageUri: "https://images.pexels.com/photos/17980077/pexels-photo-17980077.jpeg",
   },
   {
-        id: "3", species:"Red Panda", class:"mammal", binomialName: "Ailurus fulgens", conservationStatus: "endangered", habitat: "The Lost Peaks", 
+        id: "3", species:"Red Panda", animalClass:"mammal", binomialName: "Ailurus fulgens", conservationStatus: "endangered", habitat: "The Lost Peaks", 
         blurb: "Red Pandas are the house cats of the himalayans. It's said if you carry one to the summit Annapurna it will grant you two wishes, one of which is head scritches",
         socialStructure: "solitary", diet:"herbivore", lifespan:"14 years", imageUri: "https://images.pexels.com/photos/7633795/pexels-photo-7633795.jpeg"
     
@@ -62,7 +62,7 @@ export const animals: Animal[] = [
   {
     id: "4",
     species: "Snow Leopard",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Panthera uncia",
     conservationStatus: "vulnerable",
     habitat: "The Lost Peaks",
@@ -75,7 +75,7 @@ export const animals: Animal[] = [
   {
     id: "5",
     species: "Asian Elephant",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Elephas maximus",
     conservationStatus: "endangered",
     habitat: "The Great Rainforest",
@@ -88,7 +88,7 @@ export const animals: Animal[] = [
   {
     id: "6",
     species: "African Elephant",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Loxodonta africana",
     conservationStatus: "endangered",
     habitat: "The Sunsoaked Savanna",
@@ -101,7 +101,7 @@ export const animals: Animal[] = [
   {
     id: "7",
     species: "Giraffe",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Giraffa camelopardalis",
     conservationStatus: "vulnerable",
     habitat: "The Sunsoaked Savanna",
@@ -114,7 +114,7 @@ export const animals: Animal[] = [
   {
     id: "8",
     species: "Plains Zebra",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Equus quagga",
     conservationStatus: "near threatened",
     habitat: "The Sunsoaked Savanna",
@@ -127,7 +127,7 @@ export const animals: Animal[] = [
   {
     id: "9",
     species: "Hippopotamus",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Hippopotamus amphibius",
     conservationStatus: "vulnerable",
     habitat: "The Wettest Wetlands",
@@ -140,7 +140,7 @@ export const animals: Animal[] = [
   {
     id: "10",
     species: "White Rhinoceros",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Ceratotherium simum",
     conservationStatus: "near threatened",
     habitat: "The Sunsoaked Savanna",
@@ -153,7 +153,7 @@ export const animals: Animal[] = [
   {
     id: "11",
     species: "Cheetah",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Acinonyx jubatus",
     conservationStatus: "vulnerable",
     habitat: "The Sunsoaked Savanna",
@@ -166,7 +166,7 @@ export const animals: Animal[] = [
   {
     id: "12",
     species: "Meerkat",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Suricata suricatta",
     conservationStatus: "least concern",
     habitat: "The Dry Dry Desert",
@@ -179,7 +179,7 @@ export const animals: Animal[] = [
   {
     id: "13",
     species: "Ring-Tailed Lemur",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Lemur catta",
     conservationStatus: "endangered",
     habitat: "The Great Rainforest",
@@ -192,7 +192,7 @@ export const animals: Animal[] = [
   {
     id: "14",
     species: "Western Lowland Gorilla",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Gorilla gorilla gorilla",
     conservationStatus: "critically endangered",
     habitat: "The Great Rainforest",
@@ -205,7 +205,7 @@ export const animals: Animal[] = [
   {
     id: "15",
     species: "Chimpanzee",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Pan troglodytes",
     conservationStatus: "endangered",
     habitat: "The Great Rainforest",
@@ -218,7 +218,7 @@ export const animals: Animal[] = [
   {
     id: "16",
     species: "Orangutan",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Pongo pygmaeus",
     conservationStatus: "critically endangered",
     habitat: "The Great Rainforest",
@@ -231,7 +231,7 @@ export const animals: Animal[] = [
   {
     id: "17",
     species: "Koala",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Phascolarctos cinereus",
     conservationStatus: "vulnerable",
     habitat: "The Great Rainforest",
@@ -244,7 +244,7 @@ export const animals: Animal[] = [
   {
     id: "18",
     species: "Kangaroo",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Macropus giganteus",
     conservationStatus: "least concern",
     habitat: "The Sunsoaked Savanna",
@@ -257,7 +257,7 @@ export const animals: Animal[] = [
   {
     id: "19",
     species: "Polar Bear",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Ursus maritimus",
     conservationStatus: "vulnerable",
     habitat: "The Frozen Arctic",
@@ -270,7 +270,7 @@ export const animals: Animal[] = [
   {
     id: "20",
     species: "Grizzly Bear",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Ursus arctos horribilis",
     conservationStatus: "least concern",
     habitat: "The Lost Peaks",
@@ -283,7 +283,7 @@ export const animals: Animal[] = [
   {
     id: "21",
     species: "Grey Wolf",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Canis lupus",
     conservationStatus: "least concern",
     habitat: "The Lost Peaks",
@@ -296,7 +296,7 @@ export const animals: Animal[] = [
   {
     id: "22",
     species: "Arctic Fox",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Vulpes lagopus",
     conservationStatus: "least concern",
     habitat: "The Frozen Arctic",
@@ -309,7 +309,7 @@ export const animals: Animal[] = [
   {
     id: "23",
     species: "Giant Panda",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Ailuropoda melanoleuca",
     conservationStatus: "vulnerable",
     habitat: "The Lost Peaks",
@@ -322,7 +322,7 @@ export const animals: Animal[] = [
   {
     id: "24",
     species: "Sloth",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Bradypus variegatus",
     conservationStatus: "least concern",
     habitat: "The Great Rainforest",
@@ -335,7 +335,7 @@ export const animals: Animal[] = [
   {
     id: "26",
     species: "Bald Eagle",
-    class: "bird",
+    animalClass: "bird",
     binomialName: "Haliaeetus leucocephalus",
     conservationStatus: "least concern",
     habitat: "The Wettest Wetlands",
@@ -348,7 +348,7 @@ export const animals: Animal[] = [
   {
     id: "27",
     species: "Emperor Penguin",
-    class: "bird",
+    animalClass: "bird",
     binomialName: "Aptenodytes forsteri",
     conservationStatus: "near threatened",
     habitat: "The Frozen Arctic",
@@ -361,7 +361,7 @@ export const animals: Animal[] = [
   {
     id: "28",
     species: "Flamingo",
-    class: "bird",
+    animalClass: "bird",
     binomialName: "Phoenicopterus roseus",
     conservationStatus: "least concern",
     habitat: "The Wettest Wetlands",
@@ -374,7 +374,7 @@ export const animals: Animal[] = [
   {
     id: "29",
     species: "Great Horned Owl",
-    class: "bird",
+    animalClass: "bird",
     binomialName: "Bubo virginianus",
     conservationStatus: "least concern",
     habitat: "The Lost Peaks",
@@ -387,7 +387,7 @@ export const animals: Animal[] = [
   {
     id: "30",
     species: "Scarlet Macaw",
-    class: "bird",
+    animalClass: "bird",
     binomialName: "Ara macao",
     conservationStatus: "least concern",
     habitat: "The Great Rainforest",
@@ -400,7 +400,7 @@ export const animals: Animal[] = [
   {
     id: "31",
     species: "King Cobra",
-    class: "reptile",
+    animalClass: "reptile",
     binomialName: "Ophiophagus hannah",
     conservationStatus: "vulnerable",
     habitat: "The Great Rainforest",
@@ -413,7 +413,7 @@ export const animals: Animal[] = [
   {
     id: "32",
     species: "Komodo Dragon",
-    class: "reptile",
+    animalClass: "reptile",
     binomialName: "Varanus komodoensis",
     conservationStatus: "endangered",
     habitat: "The Sunsoaked Savanna",
@@ -426,7 +426,7 @@ export const animals: Animal[] = [
   {
     id: "33",
     species: "Green Sea Turtle",
-    class: "reptile",
+    animalClass: "reptile",
     binomialName: "Chelonia mydas",
     conservationStatus: "endangered",
     habitat: "The Sparkling Sea",
@@ -439,7 +439,7 @@ export const animals: Animal[] = [
   {
     id: "34",
     species: "American Alligator",
-    class: "reptile",
+    animalClass: "reptile",
     binomialName: "Alligator mississippiensis",
     conservationStatus: "least concern",
     habitat: "The Rounding Rivers",
@@ -452,7 +452,7 @@ export const animals: Animal[] = [
   {
     id: "35",
     species: "Poison Dart Frog",
-    class: "amphibian",
+    animalClass: "amphibian",
     binomialName: "Dendrobates tinctorius",
     conservationStatus: "least concern",
     habitat: "The Great Rainforest",
@@ -465,7 +465,7 @@ export const animals: Animal[] = [
   {
     id: "36",
     species: "Axolotl",
-    class: "amphibian",
+    animalClass: "amphibian",
     binomialName: "Ambystoma mexicanum",
     conservationStatus: "critically endangered",
     habitat: "The Rounding Rivers",
@@ -478,7 +478,7 @@ export const animals: Animal[] = [
   {
     id: "37",
     species: "Clownfish",
-    class: "fish",
+    animalClass: "fish",
     binomialName: "Amphiprion ocellaris",
     conservationStatus: "least concern",
     habitat: "The Sparkling Sea",
@@ -491,7 +491,7 @@ export const animals: Animal[] = [
   {
     id: "38",
     species: "Great White Shark",
-    class: "fish",
+    animalClass: "fish",
     binomialName: "Carcharodon carcharias",
     conservationStatus: "vulnerable",
     habitat: "The Sparkling Sea",
@@ -504,7 +504,7 @@ export const animals: Animal[] = [
   {
     id: "39",
     species: "Manta Ray",
-    class: "fish",
+    animalClass: "fish",
     binomialName: "Mobula birostris",
     conservationStatus: "endangered",
     habitat: "The Sparkling Sea",
@@ -517,7 +517,7 @@ export const animals: Animal[] = [
   {
     id: "40",
     species: "Giant Pacific Octopus",
-    class: "invertebrate",
+    animalClass: "invertebrate",
     binomialName: "Enteroctopus dofleini",
     conservationStatus: "least concern",
     habitat: "The Sparkling Sea",
@@ -530,7 +530,7 @@ export const animals: Animal[] = [
   {
     id: "41",
     species: "Emu",
-    class: "bird",
+    animalClass: "bird",
     binomialName: "Dromaius novaehollandiae",
     conservationStatus: "least concern",
     habitat: "The Dry Dry Desert",
@@ -543,7 +543,7 @@ export const animals: Animal[] = [
   {
     id: "42",
     species: "Moose",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Alces alces",
     conservationStatus: "least concern",
     habitat: "The Wettest Wetlands",
@@ -556,7 +556,7 @@ export const animals: Animal[] = [
   {
     id: "43",
     species: "Bison",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Bison bison",
     conservationStatus: "near threatened",
     habitat: "The Sunsoaked Savanna",
@@ -569,7 +569,7 @@ export const animals: Animal[] = [
   {
     id: "44",
     species: "Wolverine",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Gulo gulo",
     conservationStatus: "least concern",
     habitat: "The Lost Peaks",
@@ -582,7 +582,7 @@ export const animals: Animal[] = [
   {
     id: "45",
     species: "Tasmanian Devil",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Sarcophilus harrisii",
     conservationStatus: "endangered",
     habitat: "The Great Rainforest",
@@ -595,7 +595,7 @@ export const animals: Animal[] = [
   {
     id: "46",
     species: "Fennec Fox",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Vulpes zerda",
     conservationStatus: "least concern",
     habitat: "The Dry Dry Desert",
@@ -608,7 +608,7 @@ export const animals: Animal[] = [
   {
     id: "47",
     species: "Jaguar",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Panthera onca",
     conservationStatus: "near threatened",
     habitat: "The Great Rainforest",
@@ -621,7 +621,7 @@ export const animals: Animal[] = [
   {
     id: "48",
     species: "Tapir",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Tapirus terrestris",
     conservationStatus: "vulnerable",
     habitat: "The Great Rainforest",
@@ -634,7 +634,7 @@ export const animals: Animal[] = [
   {
     id: "49",
     species: "Peacock",
-    class: "bird",
+    animalClass: "bird",
     binomialName: "Pavo cristatus",
     conservationStatus: "least concern",
     habitat: "The Great Rainforest",
@@ -647,7 +647,7 @@ export const animals: Animal[] = [
   {
     id: "50",
     species: "Red Kangaroo",
-    class: "mammal",
+    animalClass: "mammal",
     binomialName: "Osphranter rufus",
     conservationStatus: "least concern",
     habitat: "The Dry Dry Desert",
@@ -657,7 +657,7 @@ export const animals: Animal[] = [
     lifespan: "22 years",
     imageUri: "https://images.pexels.com/photos/33485065/pexels-photo-33485065.jpeg",
   },
-  {id: "69", species: "Big Foot", class:"mammal", binomialName: "Biggus Footus", conservationStatus: "extinct in the wild", habitat: "The Lost Peaks",
+  {id: "69", species: "Big Foot", animalClass:"mammal", binomialName: "Biggus Footus", conservationStatus: "extinct in the wild", habitat: "The Lost Peaks",
         blurb: "A live bigfoot has never been captured on film as they are known to use monkey suits as camouflage to elude predators",
         socialStructure: "family unit", diet:"omnivore", lifespan: "unknown", imageUri: "https://images.pexels.com/photos/36554178/pexels-photo-36554178.jpeg"
      }

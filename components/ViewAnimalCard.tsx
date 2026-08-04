@@ -8,7 +8,7 @@ type ViewAnimalCardProps = {
   species: string;
   blurb: string;
   conservationStatus: string
-  class: string
+  animalClass: string
 };
 
 const ViewAnimalCard = ({
@@ -17,7 +17,7 @@ const ViewAnimalCard = ({
   species,
   blurb,
   conservationStatus,
-  class
+  class,
 }: ViewAnimalCardProps) => {
   return (
     <div className="bg-white  h-120 max-w-full w-[90%] ml-4 lg:w-70 rounded-2xl mt-10 flex flex-col lg:my-10">
@@ -37,7 +37,7 @@ const ViewAnimalCard = ({
             <div className="h-10">
               <p className="text-green-800 text-xs">{blurb}</p>
             </div>
-            <div className="justify-end items-end align-bottom">
+            <div >
               <ConservationStatusCard conservationStatus={conservationStatus} />
             </div>
           </div>
