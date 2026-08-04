@@ -20,12 +20,12 @@ export default function Navbar() {
     console.log("Pathname",pathname)
   return (
     <nav className="bg-red-50 border-b border-gray-200 px-6 py-4 ">
-      <div className=" flex flex-row ">
-        <div className="w-1/2">
+      <div className=" flex lg:flex-row sm:flex-col ">
+        <div className="lg:w-1/2 sm:w-full">
             <Link key='/' href='/' className="text-4xl font-bold text-green-900 text-start">BestiaryU</Link>
         
         </div>
-        <div className=" w-1/2 flex flex-row justify-end pt-3 gap-5 mr-10">
+        <div className=" sm:w-full lg:w-1/2 flex flex-row sm:justify-center lg:justify-end pt-3 gap-5 mr-10">
         {
             navLinks.map((link)=>{
                 const isActive = pathname ===link.href
