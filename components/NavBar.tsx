@@ -25,7 +25,7 @@ export default function Navbar() {
             <Link key='/' href='/' className="text-4xl font-bold text-green-900 text-start">BestiaryU</Link>
         
         </div>
-        <div className=" w-full lg:w-1/2 flex flex-row justify-center lg:justify-end pt-3 gap-5 mr-10">
+        <div className=" w-full lg:w-1/2 flex flex-row justify-center lg:justify-end pt-3 gap-5 lg:mr-10">
         {
             navLinks.map((link)=>{
                 const isActive = pathname ===link.href
