@@ -1,20 +1,19 @@
-'use client'
-import React, {useState, useEffect} from 'react'
+
 import HomeAnimalCard from "@/components/HomeAnimalCard";
 import Image from "next/image";
 import { animals } from "../lib/data";
 
-
-export default function Home() {
+export const dynamic = "force-dynamic";
 //function that creates a copy of animal array in random order so random animals can be generated for feature profile
-useEffect(()=>{
 function getFeaturedAnimals(arr: typeof animals, count: number) {
   return [...arr]
     .sort(() => Math.random() - 0.5)
     .slice(0, count);
 }
-getFeaturedAnimals(animals,3)
-  },[])
+
+export default function Home() {
+  //takes the animals data array and 3 to generate 3 animals to be the page's featured animals
+  const featuredAnimals = getFeaturedAnimals(animals,3)
   return (
     <><div className="relative text-center">
  <Image
