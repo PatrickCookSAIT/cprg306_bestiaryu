@@ -45,6 +45,13 @@ export default function Home() {
         </div>
       </div>
     </div>
+    <div className="flex flex-col mx-10 mt-10">
+      <h1 className="text-2xl text-green-900 font-bold font-serif">Featured Species</h1>
+      <div className="flex flex-row mt-2 justify-between">
+        <h2 className="text-green-900 text-sm">Meet our majestic ambassadors hailing from the animal kingdom</h2>
+        <button className="text-green-900 text-sm font-semibold hidden lg:block">View All Animals &#x2197;</button>
+      </div>
+    </div>
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 lg:justify-around lg:mx-10 max-w-full">
     {featuredAnimals.slice(0, 3).map((animal) => (
   <HomeAnimalCard
