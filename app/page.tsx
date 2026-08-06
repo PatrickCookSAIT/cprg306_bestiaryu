@@ -3,11 +3,12 @@ import HomeAnimalCard from "@/components/HomeAnimalCard";
 import Image from "next/image";
 import { getAnimals, getDenizens, getHabitats } from "@/lib/data";
 import Link from "next/link";
+import type { Animal } from "@/lib/types";
 
 //server won't cache the random animal choices so it with allow for new animals each reload
 export const dynamic = "force-dynamic";
 //function that creates a copy of animal array in random order so random animals can be generated for feature profile
-function getFeaturedAnimals(arr: typeof animals, count: number) {
+function getFeaturedAnimals(arr: Animal[], count: number) {
   return [...arr]
     .sort(() => Math.random() - 0.5)
     .slice(0, count);
