@@ -3,17 +3,19 @@ import Image from "next/image";
 import ConservationStatusCard from './ConservationStatusCard';
 import Link from 'next/link';
 
-type ViewAnimalCardProps = {
-  id: string;
-  imageUri: string;
-  habitat: string;
-  species: string;
-  blurb: string;
-  conservationStatus: string
-  animalClass: string
+type SpeciesPageAnimalCardProps = {
+  species:string,
+    animalClass:string,
+    binomialName:string,
+    conservationStatus:string,
+    habitat:string,
+    socialStructure:string,
+    diet:string,
+    lifespan:string,
+    imageUri:string
 };
 
-const ViewAnimalCard = ({
+const SpeciesPageAnimalCard = ({
     species,
     animalClass,
     binomialName,
@@ -23,7 +25,7 @@ const ViewAnimalCard = ({
     diet,
     lifespan,
     imageUri
-}: ViewAnimalCardProps) => {
+}: SpeciesPageAnimalCardProps) => {
   return (
     <Link href={`/animals/${species}`} className="block hover:scale-105 transition-transform">
     <div className="bg-white  h-135 max-w-full w-[90%] ml-4 lg:w-70 rounded-2xl mt-10 flex flex-col lg:my-10">
@@ -45,7 +47,7 @@ const ViewAnimalCard = ({
 
             <h1 className="text-green-900 font-bold text-2xl mb-1">{species}</h1>
             <div className="h-10">
-              <p className="text-stone-400 text-xs italic">{blurb}</p>
+              <p className="text-stone-400 text-xs italic">{binomialName}</p>
             </div>
             <div className="w-full border-b border-b-green-950 mt-6 pt-4 text-center">
               <h2 className="text-md font-semibold text-green-950 font-serif">EXPLORE HABITAT</h2>
@@ -58,4 +60,4 @@ const ViewAnimalCard = ({
   )
 }
 
-export default ViewAnimalCard
+export default SpeciesPageAnimalCard
