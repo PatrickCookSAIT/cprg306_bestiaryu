@@ -28,7 +28,7 @@ const IndividualAnimalPage = async ({params}: Props) => {
   );
   return (
     <main className="bg-red-50">
-      <div className="pt-10 mx-10 w-full border-b border-green-900">
+      <div className="pt-10 lg:mx-10 w-full border-b border-green-900">
         <h1 className="font-serif text-green-900 text-4xl">
           Meet our {animalDenizens.length > 1 ? animal.plural : animal.species}
         </h1>
@@ -46,7 +46,7 @@ const IndividualAnimalPage = async ({params}: Props) => {
         lifespan={animal.lifespan}
         imageUri={animal.imageUri}
     />
-    <h2 className="lg:pt-10 lg:pl-10">Who&apos;s at home?</h2>
+    <div className="flex flex-col lg:flex-row lg:ml-20">
     {animalDenizens.map((denizen)=>(
       <DenizenCard
       key={denizen.id}
@@ -61,6 +61,7 @@ const IndividualAnimalPage = async ({params}: Props) => {
       imageUri={denizen.imageUri}
       />
     ))}
+    </div>
     </div>
     </main>
   )

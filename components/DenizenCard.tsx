@@ -27,8 +27,32 @@ const DenizenCard = ({
 }: DenizenCardProps) => {
   return (
     
-    <div className="bg-white  h-115 max-w-full w-[90%] ml-4 lg:w-70 rounded-2xl mt-10 flex flex-col lg:my-10">
-        <div className="w-64 h-64 lg:w-48 lg:h-48 p-4 self-center">
+    <div className="bg-white  h-145 max-w-full w-[90%] ml-4 lg:w-155 rounded-2xl mt-10 flex flex-col lg:my-10">
+      <div className="grid lg:grid-cols-2 ">
+        <div className="flex flex-col">
+          <h1 className = "text-3xl text-green-900 font-semibold text-center lg:mb-14 pt-2">{name}</h1>
+          <div className="flex flex-row justify-between border-b border-gray-400 mt-2 mx-4 pb-2">
+            <h2 className="text-sm text-gray-500 self-center">Age</h2>
+            <h2 className="text-md text-green-900 font-bold"> {age} years old</h2>
+          </div>
+          <div className="flex flex-row justify-between border-b border-gray-400 mt-2 mx-4 pb-2">
+            <h2 className="text-sm text-gray-500 self-center">Sex</h2>
+            <h2 className="text-md text-green-900 font-bold"> {sex.charAt(0).toUpperCase() + sex.slice(1)}</h2>
+          </div>
+          <div className="flex flex-row justify-between border-b border-gray-400 mt-2 mx-4 pb-2">
+            <h2 className="text-sm text-gray-500 self-center">Arrival Date</h2>
+            <h2 className="text-md text-green-900 font-bold"> {arrivalDate}</h2>
+          </div>
+          <div className="flex flex-col bg-green-200 mx-2 p-2 rounded-2xl mt-4">
+            <h2 className= "font-semibold text-green-900 text-sm px-1">LOVES</h2>
+            <p className="text-sm text-stone-800 mt-1 px-1">{loves}</p>
+          </div>
+          <div className="flex flex-col bg-red-200 mx-2 p-2 rounded-2xl mt-4">
+            <h2 className= "font-semibold text-red-900 text-sm px-1">DISLIKES</h2>
+            <p className="text-sm text-stone-800 mt-1 px-1">{dislikes}</p>
+          </div>
+        </div>
+        <div className=" w-1/2lg:w-60 h-60  p-4 self-center flex lg:flex-col items-center justify-between">
             
           <Image
             src={imageUri}
@@ -36,10 +60,14 @@ const DenizenCard = ({
             width={480}
             height={300}
             sizes="(max-width: 768px) 100vw, 33vw"
-            className="w-full h-full object-cover rounded-full"
+            className="w-full h-full object-cover rounded-2xl"
           />
+          <div className="border-l-4 border-green-200 mt-3 w-1/2">
+          <p className="ml-2 text-sm italic text-gray-500">{blurb}</p>
         </div>
-          
+        </div>
+        
+      </div>
     </div>
         
  
