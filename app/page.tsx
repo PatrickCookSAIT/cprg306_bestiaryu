@@ -1,7 +1,7 @@
 
 import HomeAnimalCard from "@/components/HomeAnimalCard";
 import Image from "next/image";
-import { animals } from "../lib/data";
+import { getAnimals, getDenizens, getHabitats } from "@/lib/data";
 import Link from "next/link";
 
 //server won't cache the random animal choices so it with allow for new animals each reload
@@ -13,8 +13,10 @@ function getFeaturedAnimals(arr: typeof animals, count: number) {
     .slice(0, count);
 }
 
-export default function Home() {
+export default async function Home() {
   //takes the animals data array and 3 to generate 3 animals to be the page's featured animals
+  //
+  const animals = await getAnimals();
   const featuredAnimals = getFeaturedAnimals(animals,3)
   return (
     <>
