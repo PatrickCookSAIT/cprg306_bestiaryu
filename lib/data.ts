@@ -1,6 +1,7 @@
 export type Animal = {
     id: string,
     species: string,
+    plural: string,
     animalClass:string,
     binomialName: string,
     conservationStatus: string,
@@ -30,6 +31,7 @@ export const animals: Animal[] = [
   {
     id: "1",
     species: "African Lion",
+    plural: "African Lions", 
     animalClass: "mammal",
     binomialName: "Panthera leo",
     conservationStatus: "vulnerable",
@@ -43,6 +45,7 @@ export const animals: Animal[] = [
   {
     id: "2",
     species: "Bengal Tiger",
+    plural: "Bengal Tigers", 
     animalClass: "mammal",
     binomialName: "Panthera tigris tigris",
     conservationStatus: "endangered",
@@ -54,14 +57,24 @@ export const animals: Animal[] = [
     imageUri: "https://images.pexels.com/photos/16878274/pexels-photo-16878274.jpeg",
   },
   {
-        id: "3", species:"Red Panda", animalClass:"mammal", binomialName: "Ailurus fulgens", conservationStatus: "endangered", habitat: "The Lost Peaks", 
-        blurb: "Red Pandas are the house cats of the himalayans. It's said if you carry one to the summit Annapurna it will grant you two wishes, one of which is head scritches",
-        socialStructure: "solitary", diet:"herbivore", lifespan:"14 years", imageUri: "https://images.pexels.com/photos/7633795/pexels-photo-7633795.jpeg"
+    id: "3",
+    species:"Red Panda",
+    plural: "Red Pandas",
+    animalClass:"mammal",
+    binomialName: "Ailurus fulgens",
+    conservationStatus: "endangered",
+    habitat: "The Lost Peaks", 
+    blurb: "Red Pandas are the house cats of the himalayans. It's said if you carry one to the summit Annapurna it will grant you two wishes, one of which is head scritches",
+    socialStructure: "solitary",
+    diet:"herbivore",
+    lifespan:"14 years",
+    imageUri: "https://images.pexels.com/photos/7633795/pexels-photo-7633795.jpeg"
     
   },
   {
     id: "4",
     species: "Snow Leopard",
+    plural: "Snow Leopards",
     animalClass: "mammal",
     binomialName: "Panthera uncia",
     conservationStatus: "vulnerable",
@@ -75,6 +88,7 @@ export const animals: Animal[] = [
   {
     id: "5",
     species: "Asian Elephant",
+    plural: "Asian Elephants",
     animalClass: "mammal",
     binomialName: "Elephas maximus",
     conservationStatus: "endangered",
@@ -88,6 +102,7 @@ export const animals: Animal[] = [
   {
     id: "6",
     species: "African Elephant",
+    plural: "African Elephants",
     animalClass: "mammal",
     binomialName: "Loxodonta africana",
     conservationStatus: "endangered",
@@ -101,6 +116,7 @@ export const animals: Animal[] = [
   {
     id: "7",
     species: "Giraffe",
+    plural: "Giraffes",
     animalClass: "mammal",
     binomialName: "Giraffa camelopardalis",
     conservationStatus: "vulnerable",
@@ -114,6 +130,7 @@ export const animals: Animal[] = [
   {
     id: "8",
     species: "Plains Zebra",
+    plural: "Plains Zebras",
     animalClass: "mammal",
     binomialName: "Equus quagga",
     conservationStatus: "near threatened",
@@ -127,6 +144,7 @@ export const animals: Animal[] = [
   {
     id: "9",
     species: "Hippopotamus",
+    plural: "Hippopotami",
     animalClass: "mammal",
     binomialName: "Hippopotamus amphibius",
     conservationStatus: "vulnerable",
@@ -140,6 +158,7 @@ export const animals: Animal[] = [
   {
     id: "10",
     species: "White Rhinoceros",
+    plural: "White Rhinoceroses",
     animalClass: "mammal",
     binomialName: "Ceratotherium simum",
     conservationStatus: "near threatened",
@@ -153,6 +172,7 @@ export const animals: Animal[] = [
   {
     id: "11",
     species: "Cheetah",
+    plural: "Cheetahs",
     animalClass: "mammal",
     binomialName: "Acinonyx jubatus",
     conservationStatus: "vulnerable",
@@ -166,6 +186,7 @@ export const animals: Animal[] = [
   {
     id: "12",
     species: "Meerkat",
+    plural: "Meerkats",
     animalClass: "mammal",
     binomialName: "Suricata suricatta",
     conservationStatus: "least concern",
@@ -179,6 +200,7 @@ export const animals: Animal[] = [
   {
     id: "13",
     species: "Ring-Tailed Lemur",
+    plural: "Ring-Tailed Lemurs",
     animalClass: "mammal",
     binomialName: "Lemur catta",
     conservationStatus: "endangered",
@@ -192,6 +214,7 @@ export const animals: Animal[] = [
   {
     id: "14",
     species: "Western Lowland Gorilla",
+    plural: "Western Lowland Gorillas",
     animalClass: "mammal",
     binomialName: "Gorilla gorilla gorilla",
     conservationStatus: "critically endangered",
@@ -205,6 +228,7 @@ export const animals: Animal[] = [
   {
     id: "15",
     species: "Chimpanzee",
+    plural: "Chimpanzees",
     animalClass: "mammal",
     binomialName: "Pan troglodytes",
     conservationStatus: "endangered",
@@ -218,6 +242,7 @@ export const animals: Animal[] = [
   {
     id: "16",
     species: "Orangutan",
+    plural: "Orangutans",
     animalClass: "mammal",
     binomialName: "Pongo pygmaeus",
     conservationStatus: "critically endangered",
@@ -231,6 +256,7 @@ export const animals: Animal[] = [
   {
     id: "17",
     species: "Koala",
+    plural: "Koalas",
     animalClass: "mammal",
     binomialName: "Phascolarctos cinereus",
     conservationStatus: "vulnerable",
@@ -244,6 +270,7 @@ export const animals: Animal[] = [
   {
     id: "18",
     species: "Kangaroo",
+    plural: "Kangaroos",
     animalClass: "mammal",
     binomialName: "Macropus giganteus",
     conservationStatus: "least concern",
@@ -257,6 +284,7 @@ export const animals: Animal[] = [
   {
     id: "19",
     species: "Polar Bear",
+    plural: "Polar Bears",
     animalClass: "mammal",
     binomialName: "Ursus maritimus",
     conservationStatus: "vulnerable",
@@ -270,6 +298,7 @@ export const animals: Animal[] = [
   {
     id: "20",
     species: "Grizzly Bear",
+    plural: "Grizzly Bears",
     animalClass: "mammal",
     binomialName: "Ursus arctos horribilis",
     conservationStatus: "least concern",
@@ -283,6 +312,7 @@ export const animals: Animal[] = [
   {
     id: "21",
     species: "Grey Wolf",
+    plural: "Grey Wolves",
     animalClass: "mammal",
     binomialName: "Canis lupus",
     conservationStatus: "least concern",
@@ -296,6 +326,7 @@ export const animals: Animal[] = [
   {
     id: "22",
     species: "Arctic Fox",
+    plural: "Arctic Foxes",
     animalClass: "mammal",
     binomialName: "Vulpes lagopus",
     conservationStatus: "least concern",
@@ -309,6 +340,7 @@ export const animals: Animal[] = [
   {
     id: "23",
     species: "Giant Panda",
+    plural: "Giant Pandas",
     animalClass: "mammal",
     binomialName: "Ailuropoda melanoleuca",
     conservationStatus: "vulnerable",
@@ -322,6 +354,7 @@ export const animals: Animal[] = [
   {
     id: "24",
     species: "Sloth",
+    plural: "Sloths",
     animalClass: "mammal",
     binomialName: "Bradypus variegatus",
     conservationStatus: "least concern",
@@ -335,6 +368,7 @@ export const animals: Animal[] = [
   {
     id: "26",
     species: "Bald Eagle",
+    plural: "Bald Eagles",
     animalClass: "bird",
     binomialName: "Haliaeetus leucocephalus",
     conservationStatus: "least concern",
@@ -348,6 +382,7 @@ export const animals: Animal[] = [
   {
     id: "27",
     species: "Emperor Penguin",
+    plural: "Emperor Penguins",
     animalClass: "bird",
     binomialName: "Aptenodytes forsteri",
     conservationStatus: "near threatened",
@@ -361,6 +396,7 @@ export const animals: Animal[] = [
   {
     id: "28",
     species: "Flamingo",
+    plural: "Flamingos",
     animalClass: "bird",
     binomialName: "Phoenicopterus roseus",
     conservationStatus: "least concern",
@@ -374,6 +410,7 @@ export const animals: Animal[] = [
   {
     id: "29",
     species: "Great Horned Owl",
+    plural: "Great Horned Owls",
     animalClass: "bird",
     binomialName: "Bubo virginianus",
     conservationStatus: "least concern",
@@ -387,6 +424,7 @@ export const animals: Animal[] = [
   {
     id: "30",
     species: "Scarlet Macaw",
+    plural: "Scarlet Macaws",
     animalClass: "bird",
     binomialName: "Ara macao",
     conservationStatus: "least concern",
@@ -400,6 +438,7 @@ export const animals: Animal[] = [
   {
     id: "31",
     species: "King Cobra",
+    plural: "King Cobras",
     animalClass: "reptile",
     binomialName: "Ophiophagus hannah",
     conservationStatus: "vulnerable",
@@ -413,6 +452,7 @@ export const animals: Animal[] = [
   {
     id: "32",
     species: "Komodo Dragon",
+    plural: "Komodo Dragons",
     animalClass: "reptile",
     binomialName: "Varanus komodoensis",
     conservationStatus: "endangered",
@@ -426,6 +466,7 @@ export const animals: Animal[] = [
   {
     id: "33",
     species: "Green Sea Turtle",
+    plural: "Green Sea Turtles",
     animalClass: "reptile",
     binomialName: "Chelonia mydas",
     conservationStatus: "endangered",
@@ -439,6 +480,7 @@ export const animals: Animal[] = [
   {
     id: "34",
     species: "American Alligator",
+    plural: "American Alligators",
     animalClass: "reptile",
     binomialName: "Alligator mississippiensis",
     conservationStatus: "least concern",
@@ -452,6 +494,7 @@ export const animals: Animal[] = [
   {
     id: "35",
     species: "Poison Dart Frog",
+    plural: "Poison Dart Frogs",
     animalClass: "amphibian",
     binomialName: "Dendrobates tinctorius",
     conservationStatus: "least concern",
@@ -465,6 +508,7 @@ export const animals: Animal[] = [
   {
     id: "36",
     species: "Axolotl",
+    plural: "Axolotls",
     animalClass: "amphibian",
     binomialName: "Ambystoma mexicanum",
     conservationStatus: "critically endangered",
@@ -478,6 +522,7 @@ export const animals: Animal[] = [
   {
     id: "37",
     species: "Clownfish",
+    plural: "Clownfish",
     animalClass: "fish",
     binomialName: "Amphiprion ocellaris",
     conservationStatus: "least concern",
@@ -491,6 +536,7 @@ export const animals: Animal[] = [
   {
     id: "38",
     species: "Great White Shark",
+    plural: "Great White Sharks",
     animalClass: "fish",
     binomialName: "Carcharodon carcharias",
     conservationStatus: "vulnerable",
@@ -504,6 +550,7 @@ export const animals: Animal[] = [
   {
     id: "39",
     species: "Manta Ray",
+    plural: "Manta Rays",
     animalClass: "fish",
     binomialName: "Mobula birostris",
     conservationStatus: "endangered",
@@ -517,6 +564,7 @@ export const animals: Animal[] = [
   {
     id: "40",
     species: "Giant Pacific Octopus",
+    plural: "Giant Pacific Octopuses",
     animalClass: "invertebrate",
     binomialName: "Enteroctopus dofleini",
     conservationStatus: "least concern",
@@ -530,6 +578,7 @@ export const animals: Animal[] = [
   {
     id: "41",
     species: "Emu",
+    plural: "Emus",
     animalClass: "bird",
     binomialName: "Dromaius novaehollandiae",
     conservationStatus: "least concern",
@@ -543,6 +592,7 @@ export const animals: Animal[] = [
   {
     id: "42",
     species: "Moose",
+    plural: "Moose",
     animalClass: "mammal",
     binomialName: "Alces alces",
     conservationStatus: "least concern",
@@ -556,6 +606,7 @@ export const animals: Animal[] = [
   {
     id: "43",
     species: "Bison",
+    plural: "Bison",
     animalClass: "mammal",
     binomialName: "Bison bison",
     conservationStatus: "near threatened",
@@ -569,6 +620,7 @@ export const animals: Animal[] = [
   {
     id: "44",
     species: "Wolverine",
+    plural: "Wolverines",
     animalClass: "mammal",
     binomialName: "Gulo gulo",
     conservationStatus: "least concern",
@@ -582,6 +634,7 @@ export const animals: Animal[] = [
   {
     id: "45",
     species: "Tasmanian Devil",
+    plural: "Tasmanian Devils",
     animalClass: "mammal",
     binomialName: "Sarcophilus harrisii",
     conservationStatus: "endangered",
@@ -595,6 +648,7 @@ export const animals: Animal[] = [
   {
     id: "46",
     species: "Fennec Fox",
+    plural: "Fennec Foxes",
     animalClass: "mammal",
     binomialName: "Vulpes zerda",
     conservationStatus: "least concern",
@@ -608,6 +662,7 @@ export const animals: Animal[] = [
   {
     id: "47",
     species: "Jaguar",
+    plural: "Jaguars",
     animalClass: "mammal",
     binomialName: "Panthera onca",
     conservationStatus: "near threatened",
@@ -621,6 +676,7 @@ export const animals: Animal[] = [
   {
     id: "48",
     species: "Tapir",
+    plural: "Tapirs",
     animalClass: "mammal",
     binomialName: "Tapirus terrestris",
     conservationStatus: "vulnerable",
@@ -634,6 +690,7 @@ export const animals: Animal[] = [
   {
     id: "49",
     species: "Peacock",
+    plural: "Peacocks",
     animalClass: "bird",
     binomialName: "Pavo cristatus",
     conservationStatus: "least concern",
@@ -647,6 +704,7 @@ export const animals: Animal[] = [
   {
     id: "50",
     species: "Red Kangaroo",
+    plural: "Red Kangaroos",
     animalClass: "mammal",
     binomialName: "Osphranter rufus",
     conservationStatus: "least concern",
@@ -657,8 +715,17 @@ export const animals: Animal[] = [
     lifespan: "22 years",
     imageUri: "https://images.pexels.com/photos/33485065/pexels-photo-33485065.jpeg",
   },
-  {id: "69", species: "Big Foot", animalClass:"mammal", binomialName: "Biggus Footus", conservationStatus: "extinct in the wild", habitat: "The Lost Peaks",
-        blurb: "A live bigfoot has never been captured on film as they are known to use monkey suits as camouflage to elude predators",
-        socialStructure: "family unit", diet:"omnivore", lifespan: "unknown", imageUri: "https://images.pexels.com/photos/36554178/pexels-photo-36554178.jpeg"
+  {id: "69",
+    species: "Big Foot",
+    plural: "Big Foot",
+    animalClass:"mammal",
+    binomialName: "Biggus Footus",
+    conservationStatus: "extinct in the wild",
+    habitat: "The Lost Peaks",
+    blurb: "A live bigfoot has never been captured on film as they are known to use monkey suits as camouflage to elude predators",
+    socialStructure: "family unit",
+    diet:"omnivore",
+    lifespan: "unknown",
+    imageUri: "https://images.pexels.com/photos/36554178/pexels-photo-36554178.jpeg"
      }
 ];

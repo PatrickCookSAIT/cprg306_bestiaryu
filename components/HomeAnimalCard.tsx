@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 import ConservationStatusCard from './ConservationStatusCard';
+import Link from 'next/link';
 
 type HomeAnimalCardProps = {
   imageUri: string;
@@ -18,6 +19,7 @@ const HomeAnimalCard = ({
   conservationStatus,
 }: HomeAnimalCardProps) => {
   return (
+    <Link href={`/animals/${species}`} className="block hover:scale-105 transition-transform">
     <div className="bg-white  h-165 max-w-full w-[90%] ml-4 lg:w-120 rounded-2xl mt-10 flex flex-col lg:my-10">
         <div className="w-full p-4 h-120">
             
@@ -41,6 +43,7 @@ const HomeAnimalCard = ({
           </div>
         </div>
     </div>
+    </Link>
   )
 }
 
