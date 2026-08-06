@@ -49,7 +49,7 @@ const Animals = () => {
               <select
                 value={habitatSort}
                 onChange={(e) => setHabitatSort(e.target.value)}
-                className="border rounded-xl bg-white border-white p-2 w-full"
+                className="border rounded-xl bg-white border-white p-2 w-full h-10"
               >
                 <option value="All">☰ All Habitats</option>
                 <option value="The Sunsoaked Savanna">The Sunsoaked Savanna</option>

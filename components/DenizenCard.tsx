@@ -52,7 +52,7 @@ const DenizenCard = ({
             <p className="text-sm text-stone-800 mt-1 px-1">{dislikes}</p>
           </div>
         </div>
-        <div className=" w-1/2lg:w-60 h-60  p-4 self-center flex lg:flex-col items-center justify-between">
+        <div className=" w-1/2lg:w-60 h-60  p-4 self-center flex lg:flex-col items-center lg:items-start justify-between">
             
           <Image
             src={imageUri}
