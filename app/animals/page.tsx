@@ -49,7 +49,7 @@ const Animals = () => {
               <select
                 value={habitatSort}
                 onChange={(e) => setHabitatSort(e.target.value)}
-                className="border rounded-xl bg-white border-white p-2 w-full h-10 text-stone-600"
+                className="border rounded-xl bg-white border-white p-2 w-full h-10 text-stone-600 dark:bg-gray-800 dark:text-white"
               >
                 <option value="All">☰ All Habitats</option>
                 <option value="The Sunsoaked Savanna">The Sunsoaked Savanna</option>
@@ -67,7 +67,7 @@ const Animals = () => {
                   <select
                     value={conservationStatusSort}
                     onChange={(e) => setConservationStatusSort(e.target.value)}
-                    className="border rounded-xl bg-white border-white p-2 w-full text-stone-600"
+                    className="border rounded-xl bg-white border-white p-2 w-full text-stone-600 dark:bg-gray-800 dark:text-white"
                   >
                     <option value="All">🛡️ Conservation Status</option>
                     <option value="extinct">Extinct</option>
@@ -84,7 +84,7 @@ const Animals = () => {
                   <select
                     value={animalClassSort}
                     onChange={(e) => setAnimalClassSort(e.target.value)}
-                    className="border rounded-xl bg-white border-white p-2 w-full text-stone-600"
+                    className="border rounded-xl bg-white border-white p-2 w-full text-stone-600 dark:bg-gray-800 dark:text-white"
                   >
                     <option value="All">🐅 Select Animal Class</option>
                     <option value="mammal">Mammal</option>
