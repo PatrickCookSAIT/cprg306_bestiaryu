@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 import ConservationStatusCard from './ConservationStatusCard';
-import Link from 'next/link';
+
 
 type SpeciesPageAnimalCardProps = {
   species:string,

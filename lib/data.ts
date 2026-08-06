@@ -367,6 +367,19 @@ export const animals: Animal[] = [
     lifespan: "30 years",
     imageUri: "https://images.pexels.com/photos/26050828/pexels-photo-26050828.jpeg",
   },
+    {id: "25",
+    species: "Big Foot",
+    plural: "Big Foot",
+    animalClass:"mammal",
+    binomialName: "Biggus Footus",
+    conservationStatus: "extinct in the wild",
+    habitat: "The Lost Peaks",
+    blurb: "A live bigfoot has never been captured on film as they are known to use monkey suits as camouflage to elude predators",
+    socialStructure: "family unit",
+    diet:"omnivore",
+    lifespan: "unknown",
+    imageUri: "https://images.pexels.com/photos/36554178/pexels-photo-36554178.jpeg"
+     },
   {
     id: "26",
     species: "Bald Eagle",
@@ -716,20 +729,8 @@ export const animals: Animal[] = [
     diet: "herbivore",
     lifespan: "22 years",
     imageUri: "https://images.pexels.com/photos/33485065/pexels-photo-33485065.jpeg",
-  },
-  {id: "69",
-    species: "Big Foot",
-    plural: "Big Foot",
-    animalClass:"mammal",
-    binomialName: "Biggus Footus",
-    conservationStatus: "extinct in the wild",
-    habitat: "The Lost Peaks",
-    blurb: "A live bigfoot has never been captured on film as they are known to use monkey suits as camouflage to elude predators",
-    socialStructure: "family unit",
-    diet:"omnivore",
-    lifespan: "unknown",
-    imageUri: "https://images.pexels.com/photos/36554178/pexels-photo-36554178.jpeg"
-     }
+  }
+
 ];
 
 

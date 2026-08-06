@@ -1,7 +1,7 @@
 import React from 'react'
 import { animals, denizens } from "../../../lib/data";
 import SpeciesPageAnimalCard from '@/components/SpeciesPageAnimalCard';
-import DenizenCard from '@/components/SpeciesPageAnimalCard';
+import DenizenCard from '@/components/DenizenCard';
 type Props = {
   params: Promise<{
     species: string;
@@ -50,6 +50,7 @@ const IndividualAnimalPage = async ({params}: Props) => {
     {animalDenizens.map((denizen)=>(
       <DenizenCard
       key={denizen.id}
+      id={denizen.id}
       name={denizen.name}
       age={denizen.age}
       sex={denizen.sex}
