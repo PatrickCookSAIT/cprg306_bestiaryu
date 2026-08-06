@@ -1,24 +1,33 @@
 
 import HomeAnimalCard from "@/components/HomeAnimalCard";
 import Image from "next/image";
-import { getAnimals, getDenizens, getHabitats } from "@/lib/data";
+
 import Link from "next/link";
-import type { Animal } from "@/lib/types";
+import {supabase} from "@/lib/supabase"
 
 //server won't cache the random animal choices so it with allow for new animals each reload
 export const dynamic = "force-dynamic";
+
+
 //function that creates a copy of animal array in random order so random animals can be generated for feature profile
-function getFeaturedAnimals(arr: Animal[], count: number) {
+function getFeaturedAnimals<T>(arr:  T[], count: number) {
+  
   return [...arr]
     .sort(() => Math.random() - 0.5)
     .slice(0, count);
 }
 
 export default async function Home() {
+    const { data: species, error } = await supabase
+    .from("species")
+    .select("*");
+
+  if (error) {
+  console.error(error);
+  return <div>Failed to load animals.</div>;
+}
   //takes the animals data array and 3 to generate 3 animals to be the page's featured animals
-  //
-  const animals = await getAnimals();
-  const featuredAnimals = getFeaturedAnimals(animals,3)
+  const featuredAnimals = getFeaturedAnimals(species ?? [], 3);
   return (
     <>
     <div className="relative text-center max-w-full">

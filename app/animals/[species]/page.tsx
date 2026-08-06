@@ -1,72 +1,92 @@
-import React from 'react'
-import { getAnimals, getDenizens } from "../../../lib/data";
-import SpeciesPageAnimalCard from '@/components/SpeciesPageAnimalCard';
-import DenizenCard from '@/components/DenizenCard';
+import React from "react";
+import SpeciesPageAnimalCard from "@/components/SpeciesPageAnimalCard";
+import DenizenCard from "@/components/DenizenCard";
+import { supabase } from "@/lib/supabase";
+
 type Props = {
   params: Promise<{
     species: string;
   }>;
 };
 
-const IndividualAnimalPage = async ({params}: Props) => {
+const IndividualAnimalPage = async ({ params }: Props) => {
+  const { species } = await params;
 
-
-  const {species} = await params;
-  //removing url additions like %20 to find the correct species
+  // removing URL additions like %20 to find the correct species
   const decodedSpecies = decodeURIComponent(species);
 
-  const animals = await getAnimals();
-  const denizens = await getDenizens();
-  const animal = animals.find(
-    (animal) => animal.species === decodedSpecies
-  );
-    if(!animal){
-    return <h1>{species} not found</h1> 
+  // finding the species information from the Supabase database
+  const { data: animal, error } = await supabase
+    .from("species")
+    .select("*")
+    .eq("species", decodedSpecies)
+    .single();
 
-  }
-  //finding all animals housed at the zoo of the species type of route
-    const animalDenizens = denizens.filter(
-    (denizen) => denizen.species === decodedSpecies
-  );
+  if (error || !animal) {
+  console.log("decodedSpecies:", decodedSpecies);
+  console.log("animal:", animal);
+  console.log("error:", error);
+
+  return <h1>{decodedSpecies} not found</h1>;
+}
+
+  // finding all animals housed at the zoo of the species type of route
+  const { data: denizen, error: denizenError } = await supabase
+    .from("denizens")
+    .select("*")
+    .eq("species", decodedSpecies);
+
+  if (denizenError) {
+  console.log("Denizen error message:", denizenError.message);
+  console.log("Denizen error details:", denizenError.details);
+  console.log("Denizen error hint:", denizenError.hint);
+  console.log("Denizen error code:", denizenError.code);
+}
+console.log("denizen:", denizen);
   return (
     <main className="bg-red-50">
       <div className="pt-10 lg:mx-10 w-full border-b border-green-900">
         <h1 className="font-serif text-green-900 text-4xl">
-          Meet our {animalDenizens.length > 1 ? animal.plural : animal.species}
+          Meet our{" "}
+          {denizen && denizen.length > 1
+            ? animal.plural
+            : animal.species}
         </h1>
       </div>
-      <div className="flex flex-col lg:flex-row">
-      <SpeciesPageAnimalCard
-        key={animal.id}
-        species={animal.species}
-        animalClass={animal.animalClass}
-        binomialName={animal.binomialName}
-        conservationStatus={animal.conservationStatus}
-        habitat={animal.habitat}
-        socialStructure={animal.socialStructure}
-        diet={animal.diet}
-        lifespan={animal.lifespan}
-        imageUri={animal.imageUri}
-    />
-    <div className="flex flex-col lg:flex-row lg:ml-20">
-    {animalDenizens.map((denizen)=>(
-      <DenizenCard
-      key={denizen.id}
-      id={denizen.id}
-      name={denizen.name}
-      age={denizen.age}
-      sex={denizen.sex}
-      arrivalDate={denizen.arrivalDate}
-      loves={denizen.loves}
-      dislikes={denizen.dislikes}
-      blurb={denizen.blurb}
-      imageUri={denizen.imageUri}
-      />
-    ))}
-    </div>
-    </div>
-    </main>
-  )
-}
 
-export default IndividualAnimalPage
+      <div className="flex flex-col lg:flex-row">
+        <SpeciesPageAnimalCard
+          key={animal.id}
+          species={animal.species}
+          animalClass={animal.animalClass}
+          binomialName={animal.binomialName}
+          conservationStatus={animal.conservationStatus}
+          habitat={animal.habitat}
+          socialStructure={animal.socialStructure}
+          diet={animal.diet}
+          lifespan={animal.lifespan}
+          imageUri={animal.imageUri}
+        />
+
+        <div className="flex flex-col lg:flex-row lg:ml-20">
+          {denizen?.map((denizen) => (
+            <DenizenCard
+              key={denizen.id}
+              id={denizen.id}
+              name={denizen.name}
+              age={denizen.age}
+              sex={denizen.sex}
+              arrivalDate={denizen.arrivalDate}
+              loves={denizen.loves}
+              dislikes={denizen.dislikes}
+              blurb={denizen.blurb}
+              imageUri={denizen.imageUri}
+            />
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default IndividualAnimalPage;
