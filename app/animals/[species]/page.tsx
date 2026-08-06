@@ -1,5 +1,5 @@
 import React from 'react'
-import { animals, denizens } from "../../../lib/data";
+import { getAnimals, getDenizens } from "../../../lib/data";
 import SpeciesPageAnimalCard from '@/components/SpeciesPageAnimalCard';
 import DenizenCard from '@/components/DenizenCard';
 type Props = {
@@ -15,6 +15,8 @@ const IndividualAnimalPage = async ({params}: Props) => {
   //removing url additions like %20 to find the correct species
   const decodedSpecies = decodeURIComponent(species);
 
+  const animals = await getAnimals();
+  const denizens = await getDenizens();
   const animal = animals.find(
     (animal) => animal.species === decodedSpecies
   );
