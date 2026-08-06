@@ -1,7 +1,7 @@
 import React from 'react'
 import { animals, denizens } from "../../../lib/data";
 import SpeciesPageAnimalCard from '@/components/SpeciesPageAnimalCard';
-
+import DenizenCard from '@/components/SpeciesPageAnimalCard';
 type Props = {
   params: Promise<{
     species: string;
@@ -28,7 +28,12 @@ const IndividualAnimalPage = async ({params}: Props) => {
   );
   return (
     <main className="bg-red-50">
-      <h1 className="font-serif text-green-900 text-4xl">Meet out {animal.plural}</h1>
+      <div className="pt-10 mx-10 w-full border-b border-green-900">
+        <h1 className="font-serif text-green-900 text-4xl">
+          Meet our {animalDenizens.length > 1 ? animal.plural : animal.species}
+        </h1>
+      </div>
+      <div className="flex flex-col lg:flex-row">
       <SpeciesPageAnimalCard
         key={animal.id}
         species={animal.species}
@@ -41,6 +46,21 @@ const IndividualAnimalPage = async ({params}: Props) => {
         lifespan={animal.lifespan}
         imageUri={animal.imageUri}
     />
+    <h2 className="lg:pt-10 lg:pl-10">Who&apos;s at home?</h2>
+    {animalDenizens.map((denizen)=>(
+      <DenizenCard
+      key={denizen.id}
+      name={denizen.name}
+      age={denizen.age}
+      sex={denizen.sex}
+      arrivalDate={denizen.arrivalDate}
+      loves={denizen.loves}
+      dislikes={denizen.dislikes}
+      blurb={denizen.blurb}
+      imageUri={denizen.imageUri}
+      />
+    ))}
+    </div>
     </main>
   )
 }
