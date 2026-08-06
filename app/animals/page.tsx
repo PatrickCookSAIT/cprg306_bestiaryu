@@ -100,14 +100,13 @@ const Animals = () => {
        <div className="grid grid-cols-1 lg:grid-cols-4  lg:justify-around lg:mx-10 max-w-full">
     {filteredAnimals.slice(0, 8).map((animal) => (
   <ViewAnimalCard
-    key={animal.id}
-    imageUri={animal.imageUri}
-    species={animal.species}
-    habitat={animal.habitat}
-    blurb={animal.blurb}
-    conservationStatus={animal.conservationStatus}
-    animalClass={animal.animalClass}
-  />
+        key={animal.id}
+        imageUri={animal.imageUri}
+        species={animal.species}
+        habitat={animal.habitat}
+        blurb={animal.blurb}
+        conservationStatus={animal.conservationStatus}
+        animalClass={animal.animalClass} id={''}  />
   
 ))}
 </div>
