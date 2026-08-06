@@ -51,7 +51,7 @@ export const animals: Animal[] = [
     socialStructure: "solitary",
     diet: "carnivore",
     lifespan: "15 years",
-    imageUri: "https://images.pexels.com/photos/17980077/pexels-photo-17980077.jpeg",
+    imageUri: "https://images.pexels.com/photos/16878274/pexels-photo-16878274.jpeg",
   },
   {
         id: "3", species:"Red Panda", animalClass:"mammal", binomialName: "Ailurus fulgens", conservationStatus: "endangered", habitat: "The Lost Peaks", 

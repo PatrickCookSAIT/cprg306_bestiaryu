@@ -18,7 +18,7 @@ const HomeAnimalCard = ({
   conservationStatus,
 }: HomeAnimalCardProps) => {
   return (
-    <div className="bg-white  h-160 max-w-full w-[90%] ml-4 lg:w-120 rounded-2xl mt-10 flex flex-col lg:my-10">
+    <div className="bg-white  h-165 max-w-full w-[90%] ml-4 lg:w-120 rounded-2xl mt-10 flex flex-col lg:my-10">
         <div className="w-full p-4 h-120">
             
           <Image

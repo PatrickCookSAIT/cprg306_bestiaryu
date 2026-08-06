@@ -12,7 +12,7 @@ const navLinks=[
     
     {href: '/animals', label: 'Animals'},
     {href: '/habitats', label: 'Habitats'},
-    {href: '/aboutus', label: 'About Us'},
+    {href: '/about', label: 'About Us'},
 ]
 
 export default function Navbar() {

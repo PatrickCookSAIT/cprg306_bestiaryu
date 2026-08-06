@@ -40,17 +40,17 @@ export default function Home() {
         <button className="mt-10 bg-green-900 hover:bg-green-500 text-white font-bold py-2 px-4 rounded mr-8">
           Plan your trip →
         </button>
-        <button className="mt-10  bg-gray-500/25 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded">
+        <Link key='/animals' href='/animals' className="mt-10  bg-gray-500/25 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded">
           View our animals
-        </button>
+        </Link>
         </div>
       </div>
     </div>
-    <div className="flex flex-col mx-10 mt-10">
+    <div className="flex flex-col mx-10 mt-10 lg:mx-20">
       <h1 className="text-2xl text-green-900 font-bold font-serif">Featured Species</h1>
       <div className="flex flex-row mt-2 justify-between">
         <h2 className="text-green-900 text-sm">Meet our majestic ambassadors hailing from the animal kingdom</h2>
-        <Link key='/animals' href='/animals' className="text-green-900 text-sm font-semibold hidden lg:block hover:text-green-500">View All Animals &#x2197;</Link>
+        <Link key='/animals' href='/animals' className="text-green-900 text-sm font-semibold hidden lg:block hover:text-green-500 lg:mr-20">View All Animals &#x2197;</Link>
       </div>
     </div>
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 lg:justify-around lg:mx-10 max-w-full">
