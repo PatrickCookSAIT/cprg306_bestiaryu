@@ -11,7 +11,7 @@ import React from 'react'
 const navLinks=[
     
     {href: '/animals', label: 'Animals'},
-    {href: '/habitats', label: 'Habitats'},
+    {href: '/map', label: 'Map'},
     {href: '/schedule', label: 'Schedule'},
     {href: '/about', label: 'About Us'},
 ]
