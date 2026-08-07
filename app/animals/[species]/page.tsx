@@ -1,7 +1,7 @@
 import React from "react";
 import SpeciesPageAnimalCard from "@/components/SpeciesPageAnimalCard";
 import DenizenCard from "@/components/DenizenCard";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/client";
 
 type Props = {
   params: Promise<{
@@ -11,7 +11,7 @@ type Props = {
 
 const IndividualAnimalPage = async ({ params }: Props) => {
   const { species } = await params;
-
+  const supabase = createClient();
   // removing URL additions like %20 to find the correct species
   const decodedSpecies = decodeURIComponent(species);
 
@@ -23,12 +23,12 @@ const IndividualAnimalPage = async ({ params }: Props) => {
     .single();
 
   if (error || !animal) {
-  console.log("decodedSpecies:", decodedSpecies);
-  console.log("animal:", animal);
-  console.log("error:", error);
+    console.log("decodedSpecies:", decodedSpecies);
+    console.log("animal:", animal);
+    console.log("error:", error);
 
-  return <h1>{decodedSpecies} not found</h1>;
-}
+    return <h1>{decodedSpecies} not found</h1>;
+  }
 
   // finding all animals housed at the zoo of the species type of route
   const { data: denizen, error: denizenError } = await supabase
@@ -37,20 +37,18 @@ const IndividualAnimalPage = async ({ params }: Props) => {
     .eq("species", decodedSpecies);
 
   if (denizenError) {
-  console.log("Denizen error message:", denizenError.message);
-  console.log("Denizen error details:", denizenError.details);
-  console.log("Denizen error hint:", denizenError.hint);
-  console.log("Denizen error code:", denizenError.code);
-}
-console.log("denizen:", denizen);
+    console.log("Denizen error message:", denizenError.message);
+    console.log("Denizen error details:", denizenError.details);
+    console.log("Denizen error hint:", denizenError.hint);
+    console.log("Denizen error code:", denizenError.code);
+  }
+  console.log("denizen:", denizen);
   return (
     <main className="bg-red-50">
       <div className="pt-10 lg:mx-10 w-full border-b border-green-900">
         <h1 className="font-serif text-green-900 text-4xl">
           Meet our{" "}
-          {denizen && denizen.length > 1
-            ? animal.plural
-            : animal.species}
+          {denizen && denizen.length > 1 ? animal.plural : animal.species}
         </h1>
       </div>
 
@@ -90,3 +88,4 @@ console.log("denizen:", denizen);
 };
 
 export default IndividualAnimalPage;
+
