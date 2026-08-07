@@ -26,10 +26,25 @@ const IndividualHabitatPage = async ({ params }: Props) => {
 
     return <h1>{decodedName} not found</h1>;
   }
+  //pull data from species table on supabase where the species resides in current habitat
+  const { data: animals, error: animalError } = await supabase
+  .from("species")
+  .select("species")
+  .eq("habitat", habitat.name);
+
+  if (animalError) {
+    console.error(animalError);
+    return <h1>Failed to load animals</h1>;
+  }
 
   return (
     <div>
       <h1>{habitat.name}</h1>
+  <div>
+    {animals.map((e) => (
+      <p key={e.species}>{e.species}</p>
+    ))}
+  </div>
     </div>
   );
 };
