@@ -12,6 +12,7 @@ const navLinks=[
     
     {href: '/animals', label: 'Animals'},
     {href: '/habitats', label: 'Habitats'},
+    {href: '/schedule', label: 'Schedule'},
     {href: '/about', label: 'About Us'},
 ]
 
