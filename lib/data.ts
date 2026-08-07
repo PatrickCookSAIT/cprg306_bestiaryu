@@ -27,3 +27,5 @@ export async function getDenizens(): Promise<Denizen[]> {
   if (error) throw error;
   return data;
 }
+
+
