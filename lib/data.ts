@@ -1,7 +1,7 @@
-import { supabase } from "./supabase";
 import type { Animal, Denizen, Habitat } from "./types";
-
+import { createClient } from "@/lib/client";
 export async function getAnimals(): Promise<Animal[]> {
+  const supabase = await createClient();
   const { data, error } = await supabase
     .from("species")
     .select("*")
@@ -11,6 +11,7 @@ export async function getAnimals(): Promise<Animal[]> {
 }
 
 export async function getHabitats(): Promise<Habitat[]> {
+  const supabase = await createClient();
   const { data, error } = await supabase
     .from("habitat")
     .select("*")
@@ -20,6 +21,7 @@ export async function getHabitats(): Promise<Habitat[]> {
 }
 
 export async function getDenizens(): Promise<Denizen[]> {
+  const supabase = await createClient();
   const { data, error } = await supabase
     .from("denizen")
     .select("*")
