@@ -1,24 +1,36 @@
 import AnimalsGrid from "@/components/AnimalsGrid";
-import { getAnimals }  from "@/lib/data";
-
-
+import { supabase } from "@/lib/supabase";
 
 export default async function AnimalsPage() {
-  const animals = await getAnimals();
-  console.log('count:', animals?.length);
+  const { data: animals, error } = await supabase
+    .from("species")
+    .select("*");
+
+  if (error) {
+    console.error(error);
+    return <h1>Failed to load animals</h1>;
+  }
+
+  console.log("count:", animals?.length);
+
   return (
     <div className="bg-red-50 w-full flex flex-col">
       <div className="flex flex-col w-[90%] lg:w-1/2 px-10 mt-10">
-        <h2 className="text-xa text-orange-800 font-semibold mb-5">ENRICHED DISCOVERY</h2>
-        <h1 className="text-4xl lg:text-6xl text-green-950 font-serif font-bold">Meet the Denizens of Our Domain</h1>
-        <p className="mt-5 text-sm text-green-900">Explore our collection of extraordinary wildlife, from the driest of desert dwellers to the creatures of summit and sky.</p>
+        <h2 className="text-xa text-orange-800 font-semibold mb-5">
+          ENRICHED DISCOVERY
+        </h2>
+
+        <h1 className="text-4xl lg:text-6xl text-green-950 font-serif font-bold">
+          Meet the Denizens of Our Domain
+        </h1>
+
+        <p className="mt-5 text-sm text-green-900">
+          Explore our collection of extraordinary wildlife, from the driest of
+          desert dwellers to the creatures of summit and sky.
+        </p>
       </div>
-      
-      <AnimalsGrid animals={animals} />
 
+      <AnimalsGrid animals={animals ?? []} />
     </div>
-
-    
   );
 }
-
