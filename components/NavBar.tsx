@@ -8,12 +8,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const navLinks = [
-  { href: "/animals", label: "Animals" },
-  { href: "/map", label: "Map" },
-  { href: "/schedule", label: "Schedule" },
-  { href: "/about", label: "About Us" },
-];
+const navLinks=[
+    
+    {href: '/animals', label: 'Animals'},
+    {href: '/habitats', label: 'Habitats'},
+    {href: '/schedule', label: 'Schedule'},
+    {href: '/about', label: 'About Us'},
+]
 
 export default function Navbar() {
   const pathname = usePathname();
