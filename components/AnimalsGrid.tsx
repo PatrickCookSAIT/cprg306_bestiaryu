@@ -28,6 +28,8 @@ export default function  AnimalsGrid({ animals }: { animals: Animal[] }) {
   const [habitatSort, setHabitatSort] = useState("All");
   const [conservationStatusSort, setConservationStatusSort] = useState("All");
   const [animalClassSort, setAnimalClassSort] = useState("All");
+  //setting the number of animals to appear on the screen. Starts with 8
+  const [numberOfAnimals, setNumberOfAnimals] = useState(8);
 
   const filteredAnimals = getFilteredAnimals(
     animals,
@@ -35,7 +37,10 @@ export default function  AnimalsGrid({ animals }: { animals: Animal[] }) {
     conservationStatusSort,
     animalClassSort
   );
-
+  //sets number of animals to lower of filteredAnimals.length or current numberOfAnimals + 8
+function increaseNumberOfAnimals() {
+  setNumberOfAnimals((prev) => Math.min(prev + 8, filteredAnimals.length));
+}
   return (
     <>
       
@@ -46,7 +51,7 @@ export default function  AnimalsGrid({ animals }: { animals: Animal[] }) {
               {/*select habitat for sort*/}
               <select
                 value={habitatSort}
-                onChange={(e) => setHabitatSort(e.target.value)}
+                onChange={(e) => {setHabitatSort(e.target.value); setNumberOfAnimals(8);}}
                 className="border rounded-xl bg-white border-white p-2 w-full"
               >
                 <option value="All">☰ All Habitats</option>
@@ -64,7 +69,7 @@ export default function  AnimalsGrid({ animals }: { animals: Animal[] }) {
                   {/*select conservation status for sort*/}
                   <select
                     value={conservationStatusSort}
-                    onChange={(e) => setConservationStatusSort(e.target.value)}
+                    onChange={(e) => {setConservationStatusSort(e.target.value); setNumberOfAnimals(8);}}
                     className="border rounded-xl bg-white border-white p-2 w-full"
                   >
                     <option value="All">🛡️ Conservation Status</option>
@@ -81,7 +86,7 @@ export default function  AnimalsGrid({ animals }: { animals: Animal[] }) {
                   {/*select animal class for sort*/}
                   <select
                     value={animalClassSort}
-                    onChange={(e) => setAnimalClassSort(e.target.value)}
+                    onChange={(e) => {setAnimalClassSort(e.target.value); setNumberOfAnimals(8);}}
                     className="border rounded-xl bg-white border-white p-2 w-full"
                   >
                     <option value="All">🐅 Select Animal Class</option>
@@ -98,7 +103,7 @@ export default function  AnimalsGrid({ animals }: { animals: Animal[] }) {
 
 
             <div className="grid grid-cols-1 lg:grid-cols-4  lg:justify-around lg:mx-10 max-w-full">
-              {filteredAnimals.slice(0, 8).map((animal) => (
+              {filteredAnimals.slice(0, numberOfAnimals).map((animal) => (
               <ViewAnimalCard
               key={animal.id}
               imageUri={animal.imageUri}
@@ -110,6 +115,14 @@ export default function  AnimalsGrid({ animals }: { animals: Animal[] }) {
   
               ))}
             </div>
+            {numberOfAnimals < filteredAnimals.length && (
+              <button
+                onClick={increaseNumberOfAnimals}
+                className="bg-white w-48 p-2 rounded-2xl self-center lg:mr-38 text-green-900 font-semibold hover:bg-gray-300 my-5"
+              >
+                Load More Species ⮟
+              </button>
+            )}
           </>
   );
 }
