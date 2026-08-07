@@ -1,5 +1,7 @@
 import Image from "next/image";
-
+import Link from "next/link";
+import { supabase } from "@/lib/supabase";
+/*
 const enclosures = [
   { name: "The Sunsoaked Savanna", animals: "African Lions, African Elephants, Giraffes" },
   { name: "The Great Rainforest", animals: "Bengal Tigers, Western Lowland Gorillas, Scarlet Macaws" },
@@ -10,12 +12,37 @@ const enclosures = [
   { name: "The Rounding Rivers", animals: "American Alligators, Axolotls" },
   { name: "The Wettest Wetlands", animals: "Hippopotami, Flamingos, Bald Eagles" },
 ];
-
+*/
 
 export default async function HabitatsPage() {
   
-  
+  //pull data from habitat table on supabase
+  const { data: habitats, error } = await supabase
+    .from("habitat")
+    .select("*");
 
+  if (error) {
+    console.error(error);
+    return <h1>Failed to load animals</h1>;
+  } 
+  //pull data from species table on supabase
+  const { data: animals, error: animalError } = await supabase
+  .from("species")
+  .select("species, habitat");
+
+  if (animalError) {
+    console.error(animalError);
+    return <h1>Failed to load animals</h1>;
+  }
+
+  const enclosures = habitats.map((habitat) => ({
+  ...habitat,
+  animals: animals
+    .filter((animal) => animal.habitat === habitat.name)
+    .slice(0, 3)
+    .map((animal) => animal.species)
+    .join(", "),
+}));
   return (
     <main className="flex flex-col bg-red-50 w-full">
       <div className="flex flex-col w-[90%] mx-auto lg:px-10 mt-10">
@@ -35,17 +62,21 @@ export default async function HabitatsPage() {
         </div>
         <div className= "flex justify-between my-5">
           <div className=" bg-white rounded-lg w-full lg:w-72 p-4">
-            <h2 className=" text-xl">Directory</h2>
+            <h2 className=" text-xl text-gray-400">Directory</h2>
             <h3 className="font-light text-lg mt-4">Enclosures</h3>
             
-            {enclosures.map((e) =>
-              <div key={e.name} className="mt-4">
-                <p className="font-bold text-sm">{e.name}</p>
-                <p className="text-xs text-gray-600">{e.animals}</p>
-              </div>
-            )
-
-            }
+        {enclosures.map((e) => (
+          <Link
+            key={e.id}
+            href={`/habitats/${e.name}`}
+            className="block hover:scale-105 transition-transform"
+          >
+            <div className="mt-4 group">
+              <p className="font-bold text-sm group-hover:text-green-700">{e.name}</p>
+              <p className="text-xs text-gray-600 group-hover:text-green-600">{e.animals}</p>
+            </div>
+          </Link>
+        ))}
 
             {/*<h3 className="font-light text-lg mt-4">Amenities</h3>*/}
 
