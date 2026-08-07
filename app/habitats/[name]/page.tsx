@@ -1,5 +1,5 @@
 import React from "react";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/client";
 
 type Props = {
   params: Promise<{
@@ -8,6 +8,7 @@ type Props = {
 };
 
 const IndividualHabitatPage = async ({ params }: Props) => {
+  const supabase = createClient();
   const { name } = await params;
 
   // removing URL additions like %20 to find the correct habitat
@@ -28,9 +29,9 @@ const IndividualHabitatPage = async ({ params }: Props) => {
   }
   //pull data from species table on supabase where the species resides in current habitat
   const { data: animals, error: animalError } = await supabase
-  .from("species")
-  .select("species")
-  .eq("habitat", habitat.name);
+    .from("species")
+    .select("species")
+    .eq("habitat", habitat.name);
 
   if (animalError) {
     console.error(animalError);
@@ -40,13 +41,14 @@ const IndividualHabitatPage = async ({ params }: Props) => {
   return (
     <div>
       <h1>{habitat.name}</h1>
-<div>
-  {animals.map((e) => (
-    <p key={e.species}>{e.species}</p>
-  ))}
-</div>
+      <div>
+        {animals.map((e) => (
+          <p key={e.species}>{e.species}</p>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default IndividualHabitatPage;
+
