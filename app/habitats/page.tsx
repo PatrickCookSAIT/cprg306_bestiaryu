@@ -62,7 +62,7 @@ export default async function HabitatsPage() {
         </div>
         <div className= "flex justify-between my-5">
           <div className=" bg-white rounded-lg w-full lg:w-72 p-4">
-            <h2 className=" text-xl">Directory</h2>
+            <h2 className=" text-xl text-gray-400">Directory</h2>
             <h3 className="font-light text-lg mt-4">Enclosures</h3>
             
         {enclosures.map((e) => (
@@ -71,9 +71,9 @@ export default async function HabitatsPage() {
             href={`/habitats/${e.name}`}
             className="block hover:scale-105 transition-transform"
           >
-            <div className="mt-4">
-              <p className="font-bold text-sm">{e.name}</p>
-              <p className="text-xs text-gray-600">{e.animals}</p>
+            <div className="mt-4 group">
+              <p className="font-bold text-sm group-hover:text-green-700">{e.name}</p>
+              <p className="text-xs text-gray-600 group-hover:text-green-600">{e.animals}</p>
             </div>
           </Link>
         ))}
