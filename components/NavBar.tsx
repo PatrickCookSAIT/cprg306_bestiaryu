@@ -8,13 +8,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const navLinks=[
-    
-    {href: '/animals', label: 'Animals'},
-    {href: '/habitats', label: 'Habitats'},
-    {href: '/schedule', label: 'Schedule'},
-    {href: '/about', label: 'About Us'},
-]
+const navLinks = [
+  { href: "/animals", label: "Animals" },
+  { href: "/habitats", label: "Habitats" },
+  { href: "/schedule", label: "Schedule" },
+  { href: "/about", label: "About Us" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -52,7 +51,7 @@ export default function Navbar() {
         </div>
         <Link
           href="/login"
-          className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded shrink-0"
+          className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded shrink-0 self-center"
         >
           Log in
         </Link>
