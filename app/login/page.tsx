@@ -5,13 +5,12 @@ import { createClient } from "@/lib/client";
 import { useState } from "react";
 
 export default function LoginPage() {
-
   const supabase = createClient();
   const router = useRouter();
-  
+
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
-  const [error, setError] = useState<string | null>(null)>
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   return (
