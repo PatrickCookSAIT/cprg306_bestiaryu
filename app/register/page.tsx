@@ -3,17 +3,18 @@
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/client";
 import { useState } from "react";
-import Link from "next/link";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const router = useRouter();
 
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
-  async function handleLogin(e: React.FormEvent) {
+
+  async function handleSignup(e: React.FormEvent) {
     e.preventDefault();
+
     const supabase = createClient();
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signUp({
       email,
       password,
     });
@@ -30,9 +31,9 @@ export default function LoginPage() {
   return (
     <main className="bg-red-50 w-full min-h-screen flex items-center justify-center">
       <div className="bg-white rounded-lg p-8 w-[90%] max-w-md">
-        <h2 className="text-green-400 text-3xl font-bold">Log in</h2>
+        <h2 className="text-green-400 text-3xl font-bold">Sign up</h2>
         <form
-          onSubmit={handleLogin}
+          onSubmit={handleSignup}
           className="mt-8 gap-3 justify-between flex flex-col"
         >
           <div>
@@ -63,12 +64,6 @@ export default function LoginPage() {
               value="Submit"
               className="bg-green-300 px-2 py-1 rounded-lg hover:bg-green-400 cursor-pointer"
             />
-            <Link
-              href="/register"
-              className="text-green-500 font-bold py-2 px-4 shrink-0"
-            >
-              Sign up
-            </Link>
           </div>
         </form>
       </div>
