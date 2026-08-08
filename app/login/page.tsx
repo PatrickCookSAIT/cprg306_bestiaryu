@@ -1,10 +1,19 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/client";
+import { useState } from "react";
 
 export default function LoginPage() {
+
   const supabase = createClient();
   const router = useRouter();
+  
+  const [email, setEmail] = useState("");
+  const [password, setPass] = useState("");
+  const [error, setError] = useState<string | null>(null)>
+  const [loading, setLoading] = useState(false);
+
   return (
     <main className="bg-red-50 w-full min-h-screen flex items-center justify-center">
       <div className="bg-white rounded-lg p-8 w-[90%] max-w-md">
