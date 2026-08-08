@@ -34,3 +34,11 @@ export type Denizen = {
   blurb: string;
   imageUri: string;
 };
+
+export type CalendarEvent = {
+  id: string;
+  name: string;
+  type: string;
+  location: string;
+  time: string;
+}
