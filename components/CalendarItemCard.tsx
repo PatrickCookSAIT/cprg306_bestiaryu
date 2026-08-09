@@ -14,12 +14,7 @@ const CalendarItemCard = ({
   time,
 }: CalendarItemCardProps) => {
 
-    console.log(
-    "name:", eventName,
-    "type:", eventType,
-    "location:", location,
-    "time:", time
-  );
+
   const typeStyle = {
     feeding: "bg-orange-100 border-orange-400",
     talk: "bg-blue-100 border-blue-400",
