@@ -40,7 +40,7 @@ const ViewAnimalCard = ({
               <h3 className="text-xs text-gray-400">{animalClass.toUpperCase()}</h3>
             </div>
 
-            <h1 className="text-green-900 font-bold text-2xl mb-1">{species}</h1>
+            <h1 className="text-green-900 font-bold text-xl mb-1">{species}</h1>
             <div className="h-10">
               <p className="text-stone-400 text-xs italic">{blurb}</p>
             </div>

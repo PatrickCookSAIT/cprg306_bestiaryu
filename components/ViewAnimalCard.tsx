@@ -40,12 +40,14 @@ const ViewAnimalCard = ({
               <h3 className="text-xs text-gray-400">{animalClass.toUpperCase()}</h3>
             </div>
 
-            <h1 className="text-green-900 font-bold text-2xl mb-1">{species}</h1>
+            <h1 className="text-green-900 font-bold text-xl mb-1">{species}</h1>
             <div className="h-10">
               <p className="text-stone-400 text-xs italic">{blurb}</p>
             </div>
             <div className="w-full border-b border-b-green-950 mt-6 pt-4 text-center">
-              <h2 className="text-md font-semibold text-green-950 font-serif">EXPLORE HABITAT</h2>
+              <Link 
+                href={`/habitats/${habitat}`}
+              className="text-md font-semibold text-green-950 font-serif hover:text-green-600">EXPLORE HABITAT</Link>
             </div>
             
           </div>

@@ -49,16 +49,17 @@ export default async function HabitatsPage() {
             Habitats
           </h1>
 
-          <a
+          <Link
             href="/sanctuary-map.pdf"
             download
-            className="flex items-center gap-2 bg-green-900 hover:bg-green-500 text-xs lg:text-md text-white font-bold py-1 lg:py-2 px-4 rounded mr-8"
+            className="flex items-center bg-green-900 hover:bg-green-500 text-xs lg:text-md text-white h-10 font-bold py-1 px-4 rounded mr-8"
           >
+            
             💾 Download PDF
-          </a>
+          </Link>
         </div>
         <div>
-          <div>
+          
             <Image
               src="/sanctuary-map.png"
               alt="Sanctuary map"
@@ -66,7 +67,7 @@ export default async function HabitatsPage() {
               height={1000}
               className="w-full h-auto lg:hidden"
             />
-          </div>
+          
         </div>
         <div className="flex justify-between my-5">
           <div className=" bg-white rounded-lg w-full lg:w-72 p-4">
@@ -92,7 +93,7 @@ export default async function HabitatsPage() {
 
             {/*<h3 className="font-light text-lg mt-4">Amenities</h3>*/}
           </div>
-          <div>
+          <div className="">
             <Image
               src="/sanctuary-map.png"
               alt="Sanctuary map"
