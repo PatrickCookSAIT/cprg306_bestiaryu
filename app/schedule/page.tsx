@@ -3,8 +3,8 @@ import { supabase } from "@/lib/supabase";
 import type { CalendarEvent } from "@/lib/types";
 
 const timeCodes = [
-  "9:00",
-  "9:30",
+  "09:00",
+  "09:30",
   "10:00",
   "10:30",
   "11:00",
@@ -35,23 +35,29 @@ export default async function schedulePage() {
     .from("event")
     .select("*")
     .order("time", { ascending: true });
-    console.log("event.eventType):", events?.[0]?.eventType);
+    
 
   if (error) {
     console.error(error);
     return <h1>Failed to load calendar events</h1>;
   }
 
+ 
+
+
   return (
     <div className="bg-red-50 w-full flex flex-col items-center">
 
-      <div className="w-[90%] flex border border-gray-400 justify-center py-2">
+      <div className="w-[70%] flex border border-gray-400 justify-center py-2">
         <h1 className="text-green-900 font-light text-4xl">
           Today&apos;s Schedule
         </h1>
+        <p>
+       
+        </p>
       </div>
-
-      <div className="w-[90%] grid grid-cols-2 border border-gray-400">
+      
+      <div className="w-[70%] grid grid-cols-[80px_1fr] border border-gray-400">
 
         {timeCodes.map((time) => {
           const eventsAtTime = getEventsAtTime(events, time);
@@ -60,8 +66,8 @@ export default async function schedulePage() {
             <div key={time} className="contents">
 
             
-              <div className="h-30 border border-gray-400 flex items-center justify-end pr-5">
-                <h2 className="text-xl text-black">
+              <div className="h-30 border w-auto border-gray-400 flex items-center justify-end pr-5">
+                <h2 className="text-xl text-black font-semibold">
                   {time}
                 </h2>
               </div>
@@ -69,17 +75,19 @@ export default async function schedulePage() {
               
               <div className="h-30 border border-gray-400 flex items-center gap-3 px-5">
                 
-                {eventsAtTime.map((event) => (
-                  
-                  <CalendarItemCard
-                  key={event.id}
-                  name={event.name}
-                  type={event.type}
-                  location={event.location}
-                  time={event.time}
-                />
-                
-                ))}
+                {eventsAtTime.map((event) => {
+
+
+                  return (
+                    <CalendarItemCard
+                      key={event.id}
+                      eventName={event.eventName}
+                      eventType={event.eventType}
+                      location={event.location}
+                      time={event.time}
+                    />
+                  );
+                })}
               </div>
 
             </div>

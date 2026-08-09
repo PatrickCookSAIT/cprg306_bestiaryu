@@ -37,8 +37,8 @@ export type Denizen = {
 
 export type CalendarEvent = {
   id: string;
-  name: string;
-  type: string;
+  eventName: string;
+  eventType: string;
   location: string;
   time: string;
 }
