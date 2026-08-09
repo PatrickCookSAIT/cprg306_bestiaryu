@@ -1,5 +1,7 @@
 import React from "react";
 import { createClient } from "@/lib/client";
+import HabitatCard from "@/components/HabitatCard";
+import HabitatAnimalCard from "@/components/HabitatAnimalCard";
 
 type Props = {
   params: Promise<{
@@ -30,7 +32,7 @@ const IndividualHabitatPage = async ({ params }: Props) => {
   //pull data from species table on supabase where the species resides in current habitat
   const { data: animals, error: animalError } = await supabase
     .from("species")
-    .select("species")
+    .select("*")
     .eq("habitat", habitat.name);
 
   if (animalError) {
@@ -39,14 +41,30 @@ const IndividualHabitatPage = async ({ params }: Props) => {
   }
 
   return (
-    <div>
-      <h1>{habitat.name}</h1>
-      <div>
-        {animals.map((e) => (
-          <p key={e.species}>{e.species}</p>
-        ))}
+    <main className="bg-red-50 flex flex-col justify-center">
+      <div className="flex justify-center">
+      <HabitatCard
+      key={habitat.id}
+      id={habitat.id}
+      name={habitat.name}
+      img1={habitat.img1}
+      img2={habitat.img2}
+      img3={habitat.img3}/>
+</div>
+      <div className="flex flex-row overflow-x-auto gap-4">
+         {animals.map((animal) => (
+
+        <HabitatAnimalCard
+        key={animal.id}
+              imageUri={animal.imageUri}
+              species={animal.species}
+              habitat={animal.habitat}
+              blurb={animal.blurb}
+              conservationStatus={animal.conservationStatus}
+              animalClass={animal.animalClass} id={'animal.id'}  />
+         ))}
       </div>
-    </div>
+    </main>
   );
 };
 
