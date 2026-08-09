@@ -1,5 +1,5 @@
 import CalendarItemCard from "@/components/CalendarItemCard";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/client";
 import type { CalendarEvent } from "@/lib/types";
 
 const timeCodes = [
@@ -31,6 +31,7 @@ function getEventsAtTime(arr: CalendarEvent[], time: string) {
 }
 
 export default async function schedulePage() {
+  const supabase = createClient();
   const { data: events, error } = await supabase
     .from("event")
     .select("*")
