@@ -36,12 +36,12 @@ const CalendarItemCard = ({
     demonstration: "border-green-400",
   }[eventType] || "border-gray-400";
   return (
-    <div className={`border-l-4 bg-white rounded-lg p-4 ${borderStyle}`}>
+    <div className={`border-l-4 bg-white rounded-lg lg:p-4 p-2 ${borderStyle}`}>
      
       <div className={`border rounded-4xl w-fit mb-1 ${typeStyle}`}>
-            <p className={`text-[9px]  py-1 px-2 ${textStyle}`}>{eventType}</p>
+            <p className={`text-[9px]  lg:py-1 px-1 lg:px-2 ${textStyle}`}>{eventType}</p>
       </div>
-      <h2 className="font-bold text-xs text-green-900">{eventName}</h2>
+      <h2 className="font-bold text-[10px] lg:text-xs text-green-900">{eventName}</h2>
       
       <p className="text-[9px] text-gray-600 mt-1">{"\u{1F4CD}"}{location}</p>
     </div>
