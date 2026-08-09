@@ -49,8 +49,8 @@ export default async function schedulePage() {
   return (
     <div className="bg-red-50 w-full flex flex-col items-center">
 
-      <div className="w-[70%] flex border border-gray-400 justify-center py-2">
-        <h1 className="text-green-900 font-light text-4xl">
+      <div className="lg:w-[70%] w-[90%] flex border border-gray-400  justify-center py-2">
+        <h1 className="text-green-900 font-light text-4xl font-serif">
           Today&apos;s Schedule
         </h1>
         <p>
@@ -58,7 +58,7 @@ export default async function schedulePage() {
         </p>
       </div>
       
-      <div className="w-[70%] grid grid-cols-[80px_1fr] border border-gray-400">
+      <div className="lg:w-[70%] w-[90%] grid grid-cols-[80px_1fr] border border-gray-400">
 
         {timeCodes.map((time) => {
           const eventsAtTime = getEventsAtTime(events, time);
@@ -67,8 +67,8 @@ export default async function schedulePage() {
             <div key={time} className="contents">
 
             
-              <div className="h-30 border w-auto border-gray-400 flex items-center justify-end pr-5">
-                <h2 className="text-xl text-black font-semibold">
+              <div className="h-30 border w-auto border-gray-400 border-l-red-50 flex items-center justify-end pr-5">
+                <h2 className="lg:text-xl text-sm text-green-900 font-semibold">
                   {time}
                 </h2>
               </div>
