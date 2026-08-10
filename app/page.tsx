@@ -46,9 +46,12 @@ export default async function Home() {
             </h3>
           </div>
           <div className="flex flex-row max-w-full">
-            <button className="mt-10 bg-green-900 hover:bg-green-500 text-white font-bold py-2 px-4 rounded mr-8">
+            <Link
+              href="/habitats"
+              className="mt-10 bg-green-900 hover:bg-green-500 text-white font-bold py-2 px-4 rounded mr-8"
+            >
               Plan your trip →
-            </button>
+            </Link>
             <Link
               key="/animals"
               href="/animals"
