@@ -23,7 +23,7 @@ const ViewAnimalCard = ({
 }: ViewAnimalCardProps) => {
   return (
     <Link href={`/animals/${species}`} className="block hover:scale-105 transition-transform">
-    <div className="bg-white  h-115 max-w-full w-[90%] ml-4 lg:w-75 rounded-2xl mt-10 flex flex-col lg:my-10">
+    <div className="bg-white  h-125 max-w-full w-[100%] ml-4 lg:w-75 rounded-2xl mt-10 flex flex-col lg:my-10 mb-2">
         <div className="w-full p-4 h-80">
             
           <Image
