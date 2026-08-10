@@ -1,19 +1,21 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
-import ConservationStatusCard from './ConservationStatusCard';
-import Link from 'next/link';
+import ConservationStatusCard from "./ConservationStatusCard";
+import Link from "next/link";
+import AnimalLikeButton from "./AnimalLikeButton";
 
 type ViewAnimalCardProps = {
-  id: string;
+  id: number;
   imageUri: string;
   habitat: string;
   species: string;
   blurb: string;
-  conservationStatus: string
-  animalClass: string
+  conservationStatus: string;
+  animalClass: string;
 };
 
 const ViewAnimalCard = ({
+  id,
   imageUri,
   habitat,
   species,
@@ -22,10 +24,10 @@ const ViewAnimalCard = ({
   animalClass,
 }: ViewAnimalCardProps) => {
   return (
-    <Link href={`/animals/${species}`} className="block hover:scale-105 transition-transform">
-    <div className="bg-white  h-135 max-w-full w-[90%] ml-4 lg:w-75 rounded-2xl mt-10 flex flex-col lg:my-10">
-        <div className="w-full p-4 h-80">
-            
+    <div className="bg-white h-135 max-w-full w-[90%] ml-4 lg:w-75 rounded-2xl mt-10 flex flex-col hover:scale-105 transition-transform">
+      <div className="w-full p-4 h-80 relative">
+
+        <Link href={`/animals/${species}`} className="block">
           <Image
             src={imageUri}
             alt={species}
@@ -34,25 +36,48 @@ const ViewAnimalCard = ({
             sizes="(max-width: 768px) 100vw, 33vw"
             className="w-full h-full object-cover"
           />
-          <div className="flex flex-col mt-10">
-            <div className="justify-between flex flex-row mb-3">
-              <ConservationStatusCard conservationStatus={conservationStatus} />
-              <h3 className="text-xs text-gray-400">{animalClass.toUpperCase()}</h3>
-            </div>
+        </Link>
 
-            <h1 className="text-green-900 font-bold text-2xl mb-1">{species}</h1>
+        <AnimalLikeButton
+          className="absolute top-6 right-6 z-10"
+          animalId={id}
+        />
+
+        <div className="flex flex-col mt-10">
+          <div className="justify-between flex flex-row mb-3">
+            <ConservationStatusCard
+              conservationStatus={conservationStatus}
+            />
+
+            <h3 className="text-xs text-gray-400">
+              {animalClass.toUpperCase()}
+            </h3>
+          </div>
+
+          <Link href={`/animals/${species}`} className="block">
+            <h1 className="text-green-900 font-bold text-xl mb-1">
+              {species}
+            </h1>
+
             <div className="h-10">
-              <p className="text-stone-400 text-xs italic">{blurb}</p>
+              <p className="text-stone-400 text-xs italic">
+                {blurb}
+              </p>
             </div>
-            <div className="w-full border-b border-b-green-950 mt-6 pt-4 text-center">
-              <h2 className="text-md font-semibold text-green-950 font-serif">EXPLORE HABITAT</h2>
-            </div>
-            
+          </Link>
+
+          <div className="w-full border-b border-b-green-950 mt-6 pt-4 text-center">
+            <Link
+              href={`/habitats/${habitat}`}
+              className="text-md font-semibold text-green-950 font-serif hover:text-green-600"
+            >
+              EXPLORE HABITAT
+            </Link>
           </div>
         </div>
+      </div>
     </div>
-    </Link>
-  )
-}
+  );
+};
 
-export default ViewAnimalCard
+export default ViewAnimalCard;

@@ -111,7 +111,7 @@ function increaseNumberOfAnimals() {
               habitat={animal.habitat}
               blurb={animal.blurb}
               conservationStatus={animal.conservationStatus}
-              animalClass={animal.animalClass} id={'animal.id'}  />
+              animalClass={animal.animalClass} id={animal.id}  />
   
               ))}
             </div>
