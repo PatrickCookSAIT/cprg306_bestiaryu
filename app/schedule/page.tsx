@@ -36,49 +36,35 @@ export default async function schedulePage() {
     .from("event")
     .select("*")
     .order("time", { ascending: true });
-    
 
   if (error) {
     console.error(error);
     return <h1>Failed to load calendar events</h1>;
   }
 
- 
-
-
   return (
     <div className="bg-red-50 w-full flex flex-col items-center">
-
-      <div className="lg:w-[70%] w-[90%] flex border border-gray-400  justify-center py-2">
+      <div className="lg:w-[70%] w-[90%] flex border border-gray-400  justify-center py-2 mb-3">
         <h1 className="text-green-900 font-light text-4xl font-serif">
           Today&apos;s Schedule
         </h1>
-        <p>
-       
-        </p>
+        <p></p>
       </div>
-      
-      <div className="lg:w-[70%] w-[90%] grid grid-cols-[80px_1fr] border border-gray-400">
 
+      <div className="lg:w-[70%] w-[90%] grid grid-cols-[80px_1fr] border border-gray-400">
         {timeCodes.map((time) => {
           const eventsAtTime = getEventsAtTime(events, time);
-          
+
           return (
             <div key={time} className="contents">
-
-            
               <div className="h-30 border w-auto border-gray-400 border-l-red-50 flex items-center justify-end pr-5">
                 <h2 className="lg:text-xl text-sm text-green-900 font-semibold">
                   {time}
                 </h2>
               </div>
 
-              
               <div className="h-30 border border-gray-400 flex items-center gap-3 px-5">
-                
                 {eventsAtTime.map((event) => {
-
-
                   return (
                     <CalendarItemCard
                       key={event.id}
@@ -90,11 +76,9 @@ export default async function schedulePage() {
                   );
                 })}
               </div>
-
             </div>
           );
         })}
-
       </div>
     </div>
   );
