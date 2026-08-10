@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/habitats", label: "Habitats" },
   { href: "/schedule", label: "Schedule" },
   { href: "/about", label: "About Us" },
+  { href: "/favourites", label: "Favourites" },
 ];
 
 export default function Navbar() {
@@ -72,7 +73,7 @@ export default function Navbar() {
           {isLoggedIn ? "Log Out" : "Log in"}
         </button>
         </div>
-        <div className=" w-full lg:w-1/2 flex flex-row justify-center lg:justify-end pt-3 gap-5 lg:mr-10">
+        <div className=" w-full lg:w-1/2 flex flex-row justify-center lg:justify-end pt-3 gap-3 lg:gap-5 lg:mr-10">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -80,7 +81,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={[
-                  "lg:text-lg text-sm text-center border-b-2",
+                  "lg:text-lg text-xs text-center border-b-2",
                   isActive
                     ? "text-green-900 font-bold border-green-900"
                     : "text-slate-400 font-normal border-transparent hover:text-slate-200",
