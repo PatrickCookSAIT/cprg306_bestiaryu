@@ -1,3 +1,9 @@
+// ============================================================================
+// components/CalendarItemCard.tsx   →   generates scheduling cards for events on the calendar
+// ============================================================================
+// uses calender data to generate cards for the calendar. Displays event type, event name and the location of the event
+// ----------------------------------------------------------------------------
+
 import React from "react";
 
 type CalendarItemCardProps = {

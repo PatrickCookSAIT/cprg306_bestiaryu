@@ -1,3 +1,11 @@
+
+// ============================================================================
+// components/HomeAnimalCard.tsx   →   cards generated for species of animals meant for the home page
+// ============================================================================
+// Generates animal cards for the home page includes an image, habitat (with link to habitat)
+// animal name, a blurb about the species and a conservation status card. Whole card links to the animal's page
+// ----------------------------------------------------------------------------
+
 import React from 'react'
 import Image from "next/image";
 import ConservationStatusCard from './ConservationStatusCard';

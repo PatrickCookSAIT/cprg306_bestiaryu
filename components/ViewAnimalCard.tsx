@@ -1,3 +1,10 @@
+// ============================================================================
+// components/ViewAnimalCard.tsx   →   generates a card for the animal for the Animals page and for the favourites page
+// ============================================================================
+// generates a card to be displayed on the Animals page and Favourites page.
+// displays and imageConfigDefault, conservation status, animal class, species name and bio as well as a link to the animals' habitat
+// ----------------------------------------------------------------------------
+
 import React from "react";
 import Image from "next/image";
 import ConservationStatusCard from "./ConservationStatusCard";

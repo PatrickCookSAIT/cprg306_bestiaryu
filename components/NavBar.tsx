@@ -1,7 +1,7 @@
 // ============================================================================
 // components/Navbar.tsx   →   the bar across the top of every page
 // ============================================================================
-// Display's page title and links to Discover Animals and Plan Your Visit
+// Display's page title and links to Home page (BestiaryU), Animals, Habitats, Schedule, About Us and Favourites as well as the login/logout button
 // ----------------------------------------------------------------------------
 "use client";
 import { createClient } from "@/lib/client";
