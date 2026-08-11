@@ -1,14 +1,19 @@
 /*
- * Author: Ash Burn, Patrick Cook
- * Date: 2026-08-10
- * Description: Authorization for API routes. Reads the current user from session cookie and reports.
- * Checks if the user is an admin. Input is incoming requests session cookie.
+ * Description: Returns true if the logged-in user is an administrator.
  */
 
 import { createClient } from "@/lib/server";
 
 export async function isAdmin() {
   const supabase = await createClient();
-  const { data } = await supabase.auth.getUser();
-  return data.user?.app_metadata?.role === "admin";
+  const { data: auth } = await supabase.auth.getUser();
+  if (!auth.user) return false;
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("role")
+    .eq("id", auth.user.id)
+    .single();
+
+  return profile?.role === "admin";
 }

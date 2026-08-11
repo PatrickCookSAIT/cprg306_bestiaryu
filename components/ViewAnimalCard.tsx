@@ -3,14 +3,14 @@
 // ============================================================================
 // generates a card to be displayed on the Animals page and Favourites page.
 // displays and imageConfigDefault, conservation status, animal class, species name and bio as well as a link to the animals' habitat
+// administrators additionally see a delete button, which calls the species rest endpoint
 // ----------------------------------------------------------------------------
-
 import React from "react";
 import Image from "next/image";
 import ConservationStatusCard from "./ConservationStatusCard";
 import Link from "next/link";
 import AnimalLikeButton from "./AnimalLikeButton";
-
+import DelAnimalButton from "./DelAnimalButton";
 type ViewAnimalCardProps = {
   id: number;
   imageUri: string;
@@ -19,8 +19,8 @@ type ViewAnimalCardProps = {
   blurb: string;
   conservationStatus: string;
   animalClass: string;
+  isAdmin?: boolean;
 };
-
 const ViewAnimalCard = ({
   id,
   imageUri,
@@ -29,11 +29,11 @@ const ViewAnimalCard = ({
   blurb,
   conservationStatus,
   animalClass,
+  isAdmin,
 }: ViewAnimalCardProps) => {
   return (
     <div className="bg-white h-135 max-w-full w-[90%] ml-4 lg:w-75 rounded-2xl mt-10 flex flex-col hover:scale-105 transition-transform">
       <div className="w-full p-4 h-80 relative">
-
         <Link href={`/animals/${species}`} className="block">
           <Image
             src={imageUri}
@@ -44,35 +44,29 @@ const ViewAnimalCard = ({
             className="w-100 h-70 object-cover"
           />
         </Link>
-
         <AnimalLikeButton
           className="absolute top-6 right-6 z-10"
           animalId={id}
         />
-
+        {/*delete button only rendered for administrators*/}
+        {isAdmin && (
+          <div className="absolute top-6 left-6 z-10">
+            <DelAnimalButton id={id} />
+          </div>
+        )}
         <div className="flex flex-col mt-10">
           <div className="justify-between flex flex-row mb-3">
-            <ConservationStatusCard
-              conservationStatus={conservationStatus}
-            />
-
+            <ConservationStatusCard conservationStatus={conservationStatus} />
             <h3 className="text-xs text-gray-400">
               {animalClass.toUpperCase()}
             </h3>
           </div>
-
           <Link href={`/animals/${species}`} className="block">
-            <h1 className="text-green-900 font-bold text-xl mb-1">
-              {species}
-            </h1>
-
+            <h1 className="text-green-900 font-bold text-xl mb-1">{species}</h1>
             <div className="h-10">
-              <p className="text-stone-400 text-xs italic">
-                {blurb}
-              </p>
+              <p className="text-stone-400 text-xs italic">{blurb}</p>
             </div>
           </Link>
-
           <div className="w-full border-b border-b-green-950 mt-6 pt-4 text-center">
             <Link
               href={`/habitats/${habitat}`}
@@ -86,5 +80,4 @@ const ViewAnimalCard = ({
     </div>
   );
 };
-
 export default ViewAnimalCard;
