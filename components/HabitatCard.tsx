@@ -1,3 +1,9 @@
+// ============================================================================
+// components/HabitatCard.tsx   →   generates a card for the habitat
+// ============================================================================
+// displays the habitat name and three images pulled from links
+// ----------------------------------------------------------------------------
+
 import React from 'react'
 import Image from "next/image";
 

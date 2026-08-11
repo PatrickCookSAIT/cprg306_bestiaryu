@@ -1,3 +1,9 @@
+// ============================================================================
+// app/about/page.tsx   →   Small About Us page for BestiaryU
+// ============================================================================
+// Displays some animal images and some information regarding the site and the zoo
+// ----------------------------------------------------------------------------
+
 import React from 'react'
 import Image from "next/image";
 

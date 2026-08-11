@@ -1,3 +1,9 @@
+// ============================================================================
+// app/layout.tsx   →   Layout for the site
+// ============================================================================
+// rendered as navbar -> children -> footer
+// ----------------------------------------------------------------------------
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";

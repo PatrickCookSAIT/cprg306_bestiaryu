@@ -1,3 +1,11 @@
+// ============================================================================
+// app/habitats/[name]/page.tsx   →   Dynamic routing page based of habitat name
+// ============================================================================
+// Displays habitat information for the specific habitat routed to. Displays images of the habitat using HabitatCard
+// also displays animals that are in the habitat using HabitatAnimalCard
+// finds the animals from species table that share a habitat with the habitat displayed
+// ----------------------------------------------------------------------------
+
 import React from "react";
 import { createClient } from "@/lib/client";
 import HabitatCard from "@/components/HabitatCard";
