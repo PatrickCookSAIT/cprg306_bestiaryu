@@ -9,26 +9,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { createClient } from "@/lib/client";
 
-
 export default async function HabitatsPage() {
-  //pull data from habitat table on supabase
   const supabase = createClient();
-  const { data: habitats, error } = await supabase.from("habitat").select("*");
+  //pull habitat and species data from supabase at the same time
+  const [{ data: habitats, error }, { data: animals, error: animalError }] =
+    await Promise.all([
+      supabase.from("habitat").select("*"),
+      supabase.from("species").select("species, habitat"),
+    ]);
 
-  if (error) {
-    console.error(error);
-    return <h1>Failed to load animals</h1>;
-  }
-  //pull data from species table on supabase
-  const { data: animals, error: animalError } = await supabase
-    .from("species")
-    .select("species, habitat");
-
-  if (animalError) {
-    console.error(animalError);
-    return <h1>Failed to load animals</h1>;
+  if (error || animalError) {
+    console.error(error ?? animalError);
+    return <h1>Failed to load habitats</h1>;
   }
 
+  if (!habitats || !animals) {
+    return <h1>Failed to load habitats</h1>;
+  }
   const enclosures = habitats.map((habitat) => ({
     ...habitat,
     animals: animals
@@ -50,20 +47,17 @@ export default async function HabitatsPage() {
             download
             className="flex items-center bg-green-900 hover:bg-green-500 text-xs lg:text-md text-white h-10 font-bold py-1 px-4 rounded mr-8"
           >
-            
             💾 Download PDF
           </Link>
         </div>
         <div>
-          
-            <Image
-              src="/sanctuary-map.png"
-              alt="Sanctuary map"
-              width={1200}
-              height={1000}
-              className="w-full h-auto lg:hidden"
-            />
-          
+          <Image
+            src="/sanctuary-map.png"
+            alt="Sanctuary map"
+            width={1200}
+            height={1000}
+            className="w-full h-auto lg:hidden"
+          />
         </div>
         <div className="flex justify-between my-5">
           <div className=" bg-white rounded-lg w-full lg:w-72 p-4">
