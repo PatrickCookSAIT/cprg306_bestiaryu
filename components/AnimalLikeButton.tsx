@@ -83,12 +83,10 @@ const AnimalLikeButton = ({
 
       setFavourite(false);
     } else {
-      const { error } = await supabase
-        .from("favourites")
-        .insert({
-          user_id: user.id,
-          animal_id: animalId,
-        });
+      const { error } = await supabase.from("favourites").insert({
+        user_id: user.id,
+        animal_id: animalId,
+      });
 
       if (error) {
         console.error("Error adding favourite:", error.message);
@@ -111,9 +109,7 @@ const AnimalLikeButton = ({
         e.stopPropagation();
         toggleFavourite();
       }}
-      className={`${className} ${
-        favourite ? "text-red-700" : "text-gray-400"
-      }`}
+      className={`${className} cursor-pointer ${favourite ? "text-red-700" : "text-gray-400"}`}
     >
       <Star fill={favourite ? "currentColor" : "none"} />
     </button>

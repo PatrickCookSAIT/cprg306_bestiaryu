@@ -11,7 +11,6 @@ import { createClient } from "@/lib/client";
 
 //server won't cache the random animal choices so it with allow for new animals each reload
 export const dynamic = "force-dynamic";
-const supabase = createClient();
 
 //function that creates a copy of animal array in random order so random animals can be generated for feature profile
 function getFeaturedAnimals<T>(arr: T[], count: number) {
@@ -19,6 +18,7 @@ function getFeaturedAnimals<T>(arr: T[], count: number) {
 }
 
 export default async function Home() {
+  const supabase = createClient();
   const { data: species, error } = await supabase.from("species").select("*");
 
   if (error) {
