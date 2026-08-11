@@ -26,11 +26,9 @@ export default function Navbar() {
   useEffect(() => {
     const supabase = createClient();
 
-   
     supabase.auth.getUser().then(({ data }) => {
       setIsLoggedIn(!!data.user);
     });
-
 
     const {
       data: { subscription },
@@ -67,11 +65,11 @@ export default function Navbar() {
             BestiaryU
           </Link>
           <button
-          onClick={handleAuthClick}
-          className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded shrink-0 self-center lg:hidden block"
-        >
-          {isLoggedIn ? "Log Out" : "Log in"}
-        </button>
+            onClick={handleAuthClick}
+            className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded shrink-0 self-center lg:hidden block"
+          >
+            {isLoggedIn ? "Log Out" : "Log in"}
+          </button>
         </div>
         <div className=" w-full lg:w-1/2 flex flex-row justify-center lg:justify-end pt-3 gap-3 lg:gap-5 lg:mr-10">
           {navLinks.map((link) => {
@@ -94,7 +92,7 @@ export default function Navbar() {
         </div>
         <button
           onClick={handleAuthClick}
-          className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded shrink-0 self-center hidden lg:block"
+          className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded shrink-0 self-center hidden lg:block cursor-pointer"
         >
           {isLoggedIn ? "Log Out" : "Log in"}
         </button>
