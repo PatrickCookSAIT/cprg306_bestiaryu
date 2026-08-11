@@ -1,5 +1,5 @@
 import type { Animal, Denizen, Habitat } from "./types";
-import { createClient } from "@/lib/client";
+import { createClient } from "@/lib/server";
 export async function getAnimals(): Promise<Animal[]> {
   const supabase = await createClient();
   const { data, error } = await supabase

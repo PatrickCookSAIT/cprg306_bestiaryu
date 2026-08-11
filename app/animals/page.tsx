@@ -1,30 +1,32 @@
 // ============================================================================
 // app/animals/page.tsx   →   Display page for all the animals at the zoo
 // ============================================================================
-// Using AnimalGrid, renders all the animals from the zoo
+// Using AnimalGrid, renders all the animals from the zoo.
 // ----------------------------------------------------------------------------
 
 import AnimalsGrid from "@/components/AnimalsGrid";
-import { getAnimals }  from "@/lib/data";
-
-
+import { getAnimals } from "@/lib/data";
+import { isAdmin } from "@/lib/auth";
 
 export default async function AnimalsPage() {
   const animals = await getAnimals();
-  console.log('count:', animals?.length);
+  const admin = await isAdmin();
+  console.log("count:", animals?.length);
   return (
     <div className="bg-red-50 w-full flex flex-col">
       <div className="flex flex-col w-[90%] lg:w-1/2 px-10 mt-10">
-        <h2 className="text-xa text-orange-800 font-semibold mb-5">ENRICHED DISCOVERY</h2>
-        <h1 className="text-4xl lg:text-6xl text-green-950 font-serif font-bold">Meet the Denizens of Our Domain</h1>
-        <p className="mt-5 text-sm text-green-900">Explore our collection of extraordinary wildlife, from the driest of desert dwellers to the creatures of summit and sky.</p>
+        <h2 className="text-xa text-orange-800 font-semibold mb-5">
+          ENRICHED DISCOVERY
+        </h2>
+        <h1 className="text-4xl lg:text-6xl text-green-950 font-serif font-bold">
+          Meet the Denizens of Our Domain
+        </h1>
+        <p className="mt-5 text-sm text-green-900">
+          Explore our collection of extraordinary wildlife, from the driest of
+          desert dwellers to the creatures of summit and sky.
+        </p>
       </div>
-      
-      <AnimalsGrid animals={animals} />
-
+      <AnimalsGrid animals={animals} isAdmin={admin} />:
     </div>
-
-    
   );
 }
-
