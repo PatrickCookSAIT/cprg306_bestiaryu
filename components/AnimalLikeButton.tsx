@@ -1,3 +1,11 @@
+// ============================================================================
+// components/AnimalLikeButton.tsx   →   a like button for the ViewAnimalCard
+// ============================================================================
+// Generates a star that can be pressed to indicate when an animal is liked. Only operates when user is signed in to their account
+// when pressed, adds the animal id to a table on supabase corresponding to the user's id. Or removes the animal id from that table
+// also checks the user's current favourites so it can auto fill in stars if they already have been pressed
+// ----------------------------------------------------------------------------
+
 "use client";
 
 import { useEffect, useState } from "react";

@@ -1,3 +1,11 @@
+// ============================================================================
+// app/page.tsx   →   Displays a daily calendar of events happening at the zoo
+// ============================================================================
+// Creates a calendar with events ranging from 9am to 6pm, organized in half and hour chunks
+// loads the event data from supabase
+// compares the event's time to the pre-established 30 minute time slots and then generates a CalendarItemCard to fit into that slot
+// ----------------------------------------------------------------------------
+
 import CalendarItemCard from "@/components/CalendarItemCard";
 import { createClient } from "@/lib/client";
 import type { CalendarEvent } from "@/lib/types";

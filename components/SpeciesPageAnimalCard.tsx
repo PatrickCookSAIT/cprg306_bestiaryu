@@ -1,3 +1,10 @@
+// ============================================================================
+// components/SpeciesPageAnimalCard.tsx   →   generates a card for the animal for the species page
+// ============================================================================
+// generates a card to be displayed by the Denizen cards that shows the species information for that species.
+// Includes an image, conservation status, species name, latin name, animal class, the animal's habitat in the zoo, their diet, social structure and lifespan
+// ----------------------------------------------------------------------------
+
 import React from 'react'
 import Image from "next/image";
 import ConservationStatusCard from './ConservationStatusCard';

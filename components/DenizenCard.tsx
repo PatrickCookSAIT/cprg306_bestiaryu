@@ -1,3 +1,10 @@
+// ============================================================================
+// components/DenizenCard.tsx   →   generates a card for each individual animal. (card for jeff and greg, both zebras as an example)
+// ============================================================================
+// displays information about each individual animal in resuable card. Shows name, age, sex, arrival date to the zoo
+// also shows the animal's likes and dislikes, an image and a small description of them
+// ----------------------------------------------------------------------------
+
 import React from 'react'
 import Image from "next/image";
 

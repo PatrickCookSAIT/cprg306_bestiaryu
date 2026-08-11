@@ -1,3 +1,11 @@
+// ============================================================================
+// components/AnimalGrid.tsx   →   generate the grid to display ViewAnimalCards on the animal page
+// ============================================================================
+// Displays animal cards based on the ViewAnimalCard. Starts with 8 and allows for loading until no more animals remain. 
+// User can also filter animals based on their habitat in the zoo, their conservation status or animal class (mammal, reptile, etc)
+// sends the relevant animal information to ViewAnimalCard to generate the diplayed animal information in a card
+// ----------------------------------------------------------------------------
+
 'use client'
 import { useState } from 'react';
 import ViewAnimalCard from '@/components/ViewAnimalCard';

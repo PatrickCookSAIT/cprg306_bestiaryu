@@ -1,3 +1,11 @@
+// ============================================================================
+// app/animals/[species]/page.tsx   →   The dynamically routed page for each species of animal
+// ============================================================================
+// Displays the SpeciesPageAnimalCard which gives general information on the speices routed to
+// Connects with supabase to find all Denizens of that species (ex dave the monkey)
+// displays all the denizens of the species with the DenizenCard
+// ----------------------------------------------------------------------------
+
 import React from "react";
 import SpeciesPageAnimalCard from "@/components/SpeciesPageAnimalCard";
 import DenizenCard from "@/components/DenizenCard";

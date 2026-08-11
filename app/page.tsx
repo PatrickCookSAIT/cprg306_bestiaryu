@@ -1,3 +1,9 @@
+// ============================================================================
+// app/page.tsx   →   The Home/landing page for the website
+// ============================================================================
+// Displays the home page with banner image and links. Also includes featured animals which generate 3 animals at random to be featured from the database
+// ----------------------------------------------------------------------------
+
 import HomeAnimalCard from "@/components/HomeAnimalCard";
 import Image from "next/image";
 import Link from "next/link";

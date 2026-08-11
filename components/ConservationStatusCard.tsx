@@ -1,3 +1,9 @@
+// ============================================================================
+// components/ConservationStatusCard.tsx   →   reusable card that generates a species' conservation status for display
+// ============================================================================
+// takes in conservationStatus as a prop and generates a card based on it with colour coding to indicate relative conservation levels
+// ----------------------------------------------------------------------------
+
 import React from 'react'
 
 type ConservationStatusCardProps = {

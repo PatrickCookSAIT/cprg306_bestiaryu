@@ -1,3 +1,11 @@
+// ============================================================================
+// app/login/page.tsx   →   Login page returning users
+// ============================================================================
+// Allows users to sign into their account
+// checks their email and password against supabase to confirm user exists in the database
+// also links to register page for user to register if they need a new account
+// ----------------------------------------------------------------------------
+
 "use client";
 
 import { useRouter } from "next/navigation";

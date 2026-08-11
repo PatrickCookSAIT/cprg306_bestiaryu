@@ -1,18 +1,14 @@
+// ============================================================================
+// app/habitats/page.tsx   →   Page to display map and habitat list
+// ============================================================================
+// Displays a directory of the habitats located in the zoo. Allows user to link to the dynamic routing page of each habitat.
+// Also displays the map of the zoo and has a link to allow users to download a pdf of the map
+// ----------------------------------------------------------------------------
+
 import Image from "next/image";
 import Link from "next/link";
 import { createClient } from "@/lib/client";
-/*
-const enclosures = [
-  { name: "The Sunsoaked Savanna", animals: "African Lions, African Elephants, Giraffes" },
-  { name: "The Great Rainforest", animals: "Bengal Tigers, Western Lowland Gorillas, Scarlet Macaws" },
-  { name: "The Frozen Arctic", animals: "Polar Bears, Emperor Penguins, Arctic Foxes" },
-  { name: "The Lost Peaks", animals: "Red Pandas, Snow Leopards, Giant Pandas" },
-  { name: "The Dry Dry Desert", animals: "Meerkats, Fennec Foxes, Emus" },
-  { name: "The Sparkling Sea", animals: "Great White Sharks, Green Sea Turtles, Manta Rays" },
-  { name: "The Rounding Rivers", animals: "American Alligators, Axolotls" },
-  { name: "The Wettest Wetlands", animals: "Hippopotami, Flamingos, Bald Eagles" },
-];
-*/
+
 
 export default async function HabitatsPage() {
   //pull data from habitat table on supabase

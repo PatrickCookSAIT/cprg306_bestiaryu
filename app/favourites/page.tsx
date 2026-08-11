@@ -1,4 +1,12 @@
-
+// ============================================================================
+// app/favourites/page.tsx   →   Page of user's favourited animals
+// ============================================================================
+// Locked behind authgaurd. Determine if user is logged in to view. Otherwise, redirects to log in page
+// displays any animals that have been favourited.
+// finds the user id #, compares it to database favourite table to pull all animal id#s associated with the user
+// then pulls corresponding data from the species table to find the information to display for each animal.
+// uses the existing ViewAnimalCard to generate display the animal information
+// ----------------------------------------------------------------------------
 
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/server";

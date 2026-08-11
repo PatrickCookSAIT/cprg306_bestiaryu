@@ -1,3 +1,9 @@
+// ============================================================================
+// app/animals/page.tsx   →   Display page for all the animals at the zoo
+// ============================================================================
+// Using AnimalGrid, renders all the animals from the zoo
+// ----------------------------------------------------------------------------
+
 import AnimalsGrid from "@/components/AnimalsGrid";
 import { getAnimals }  from "@/lib/data";
 
