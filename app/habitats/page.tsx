@@ -2,7 +2,7 @@
 // app/habitats/page.tsx   →   Page to display map and habitat list
 // ============================================================================
 // Displays a directory of the habitats located in the zoo. Allows user to link to the dynamic routing page of each habitat.
-// Also displays the map of the zoo and has a link to allow users to download a pdf of the map
+// Also displays the map of the zoo and has a link to allow users to download a pdf of the map.
 // ----------------------------------------------------------------------------
 
 import Image from "next/image";
@@ -80,8 +80,6 @@ export default async function HabitatsPage() {
                 </div>
               </Link>
             ))}
-
-            {/*<h3 className="font-light text-lg mt-4">Amenities</h3>*/}
           </div>
           <div className="">
             <Image

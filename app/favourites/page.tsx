@@ -23,7 +23,6 @@ export default async function FavouritesPage() {
     redirect("/login");
   }
 
-  
   const { data: favourites, error: favouritesError } = await supabase
     .from("favourites")
     .select("animal_id")
@@ -34,34 +33,39 @@ export default async function FavouritesPage() {
     return null;
   }
 
-    //set a constant of all the favourited animal ids for this user on supabase
+  //set a constant of all the favourited animal ids for this user on supabase
   const animalIds = favourites.map((favourite) => favourite.animal_id);
 
-    const {data: animals, error: animalError} = await supabase
+  const { data: animals, error: animalError } = await supabase
     .from("species")
     .select("*")
-    .in("id", animalIds)
+    .in("id", animalIds);
 
-    if (animalError) {
+  if (animalError) {
     console.error(animalError);
   }
   return (
     <main>
-        <div className="flex w-full justify-center mt-5 ml-5 lg:ml-0">
-            <h1 className="font-serif text-green-900 text-4xl font-bold">Your Favourite Animals</h1>
-        </div>
-    <div className = "flex flex-col lg:grid lg:grid-cols-4">
-      {animals?.map((animal) => (
-        <ViewAnimalCard
-              key={animal.id}
-              imageUri={animal.imageUri}
-              species={animal.species}
-              habitat={animal.habitat}
-              blurb={animal.blurb}
-              conservationStatus={animal.conservationStatus}
-              animalClass={animal.animalClass} id={animal.id}  />
-      ))}
+      <div className="flex w-full justify-center mt-5 ml-5 lg:ml-0">
+        <h1 className="font-serif text-green-900 text-4xl font-bold">
+          Your Favourite Animals
+        </h1>
+      </div>
+      <div className="flex flex-col lg:grid lg:grid-cols-4">
+        {animals?.map((animal) => (
+          <ViewAnimalCard
+            key={animal.id}
+            imageUri={animal.imageUri}
+            species={animal.species}
+            habitat={animal.habitat}
+            blurb={animal.blurb}
+            conservationStatus={animal.conservationStatus}
+            animalClass={animal.animalClass}
+            id={animal.id}
+          />
+        ))}
       </div>
     </main>
   );
 }
+
