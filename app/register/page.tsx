@@ -1,8 +1,9 @@
 // ============================================================================
 // app/register/page.tsx   →   Registration page for new users
 // ============================================================================
-// Allows users to sign up for an account
-// retrieves email and password from user, handles the sign up with supabase to store the user on that site
+// Allows users to sign up for an account.
+// retrieves email and password from user, handles the sign up with supabase to store the user on that site.
+// email authentication is disabled in supabase.
 // ----------------------------------------------------------------------------
 
 "use client";

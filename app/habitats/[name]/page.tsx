@@ -2,8 +2,8 @@
 // app/habitats/[name]/page.tsx   →   Dynamic routing page based of habitat name
 // ============================================================================
 // Displays habitat information for the specific habitat routed to. Displays images of the habitat using HabitatCard
-// also displays animals that are in the habitat using HabitatAnimalCard
-// finds the animals from species table that share a habitat with the habitat displayed
+// also displays animals that are in the habitat using HabitatAnimalCard.
+// finds the animals from species table that share a habitat with the habitat displayed.
 // ----------------------------------------------------------------------------
 
 import React from "react";
@@ -51,30 +51,31 @@ const IndividualHabitatPage = async ({ params }: Props) => {
   return (
     <main className="bg-red-50 flex flex-col justify-center">
       <div className="flex justify-center">
-      <HabitatCard
-      key={habitat.id}
-      id={habitat.id}
-      name={habitat.name}
-      img1={habitat.img1}
-      img2={habitat.img2}
-      img3={habitat.img3}/>
-</div>
+        <HabitatCard
+          key={habitat.id}
+          id={habitat.id}
+          name={habitat.name}
+          img1={habitat.img1}
+          img2={habitat.img2}
+          img3={habitat.img3}
+        />
+      </div>
       <div className="flex flex-row overflow-x-auto gap-4">
-         {animals.map((animal) => (
-
-        <HabitatAnimalCard
-        key={animal.id}
-              imageUri={animal.imageUri}
-              species={animal.species}
-              habitat={animal.habitat}
-              blurb={animal.blurb}
-              conservationStatus={animal.conservationStatus}
-              animalClass={animal.animalClass} id={'animal.id'}  />
-         ))}
+        {animals.map((animal) => (
+          <HabitatAnimalCard
+            key={animal.id}
+            imageUri={animal.imageUri}
+            species={animal.species}
+            habitat={animal.habitat}
+            blurb={animal.blurb}
+            conservationStatus={animal.conservationStatus}
+            animalClass={animal.animalClass}
+            id={"animal.id"}
+          />
+        ))}
       </div>
     </main>
   );
 };
 
 export default IndividualHabitatPage;
-

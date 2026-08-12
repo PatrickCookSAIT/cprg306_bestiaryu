@@ -1,7 +1,8 @@
 // ============================================================================
 // app/animals/page.tsx   →   Display page for all the animals at the zoo
 // ============================================================================
-// Using AnimalGrid, renders all the animals from the zoo.
+// Using AnimalGrid, renders all the animals from the zoo. Also passes AnimalsGrid a boolean
+// to tell it whether the current user in an administrator, this uses the isAdmin function from @/lib/auth.
 // ----------------------------------------------------------------------------
 
 import AnimalsGrid from "@/components/AnimalsGrid";
@@ -26,6 +27,7 @@ export default async function AnimalsPage() {
           desert dwellers to the creatures of summit and sky.
         </p>
       </div>
+      {/* Passes animals array and admin boolean to AnimalsGrid} */}
       <AnimalsGrid animals={animals} isAdmin={admin} />:
     </div>
   );

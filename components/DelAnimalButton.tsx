@@ -1,4 +1,4 @@
-// Admin-only delete button. Calls delete on the species rest endpoint
+// Admin-only delete button. Calls delete on the species rest endpoint. It is rendered on the AnimalsGrid when the user is an Admin.
 
 "use client";
 
