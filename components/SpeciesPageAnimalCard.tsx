@@ -44,6 +44,7 @@ const SpeciesPageAnimalCard = ({
             width={480}
             height={300}
             sizes="(max-width: 768px) 100vw, 33vw"
+            loading="lazy"
             className="w-full h-full object-cover rounded-full"
           />
           </div>

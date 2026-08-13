@@ -67,6 +67,7 @@ const DenizenCard = ({
             width={480}
             height={300}
             sizes="(max-width: 768px) 100vw, 33vw"
+            loading="lazy"
             className="w-full h-full object-cover rounded-2xl"
           />
           <div className="border-l-4 border-green-200 mt-3 w-1/2">

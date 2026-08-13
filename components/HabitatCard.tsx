@@ -35,6 +35,7 @@ const HabitatCard = ({
                 alt={name}
                 width={480}
                 height={300}
+                loading="lazy"
                 className="object-cover h-40 rounded-4xl"
                 />
             </div>
@@ -44,6 +45,7 @@ const HabitatCard = ({
                 alt={name}
                 width={480}
                 height={300}
+                loading="lazy"
                 className="object-cover h-40 rounded-4xl"
                 />
             </div>
@@ -53,6 +55,7 @@ const HabitatCard = ({
                 alt={name}
                 width={480}
                 height={300}
+                loading="lazy"
                 className="object-cover h-40 rounded-4xl"
                 />
             </div>
@@ -60,6 +63,7 @@ const HabitatCard = ({
                 <Image 
                 src={img1}
                 alt={name}
+                loading="lazy"
                 fill
                 className="object-cover rounded-l-4xl"
                 />
@@ -69,8 +73,7 @@ const HabitatCard = ({
                     <Image 
                     src={img2}
                     alt={name}
-                    
-                    
+                    loading="lazy"
                     fill
                     className="rounded-tr-4xl"
                     />
@@ -79,8 +82,7 @@ const HabitatCard = ({
                     <Image 
                     src={img3}
                     alt={name}
-                    
-                    
+                    loading="lazy"
                     fill
                     className="rounded-br-4xl"
                     />
